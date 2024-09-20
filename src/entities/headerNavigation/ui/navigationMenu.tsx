@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom"
+import { NavLink, NavLinkRenderProps } from "react-router-dom"
 import MainLogo from "../../../shared/logo/logo";
 import cl from './navigationMenu.module.scss';
 import MenuLink, { IMenuLinkProps } from "../../../shared/link/menuLink";
@@ -11,18 +11,18 @@ export interface INavProps {
 
 const NavigationMenu =({type,links,mainLogo}:INavProps)=>{
   const navMenuStyle = type === "header" ? cl.headerList : cl.footerList;
-  const linkState = ({ isActive }:{ isActive: boolean }) => isActive ? cl.active : "";
+  const linkState = (isActive : NavLinkRenderProps) => isActive ? `${cl.link} ${cl.active}` : `${cl.link}`;
 
   return (
-    <nav>
+    <nav className={cl.navMenu}>
       {mainLogo
-        ? <NavLink className={`${cl.link} ${linkState}`.trim()} to={'/'}><MainLogo scheme={mainLogo.scheme} alt={mainLogo.alt}/></NavLink>
+        ? <NavLink className={linkState} to={'/'}><MainLogo scheme={mainLogo.scheme} alt={mainLogo.alt}/></NavLink>
         : false
       }
       <ul className={navMenuStyle}>
         {links.map((link)=>(
-          <li key={link.to}>
-            <MenuLink type={link.type} linkPath={link.to} LinkTextContent={link.text} innerLinks={link.inner || null}/>
+          <li className={cl.navItem} key={link.to}>
+            <MenuLink type={link.type} linkPath={link.to} LinkTextContent={link.text} innerLinks={link.inner || null} location={type}/>
           </li>
         ))}
       </ul>
