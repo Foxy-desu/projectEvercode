@@ -1,0 +1,113 @@
+@import '../../app/assets/styles/variables';
+
+
+.centered {
+  //for header and content
+  padding: 0 150px;
+  width: 100%;
+  max-width: 1600px;
+
+  @media (max-width: 800px) {
+    padding: 0 calc(10vw/1.5);
+  }
+}
+
+.header {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  &_expanded {
+    @media (max-width: 1070px) {
+      position: fixed;
+      background-color: $clr-background;
+      z-index: 5;
+      top: 0;
+      left: 0;
+      height: 100dvh;
+    }
+  }
+}
+
+.controlsWrap {
+  display: flex;
+  flex-shrink: 1;
+  // padding: 0 150px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  // width: 100%;
+  // max-width: 1600px;
+  height: 76px;
+  transition: .1s ease-out;
+
+  // @media (max-width: 800px) {
+  //   padding: 0 calc(10vw/1.5);
+  // }
+}
+
+.link {
+  flex-basis: 230px;
+  height: auto;
+  
+}
+
+.navBarWrap {
+  display: block;
+  @media (max-width: 1070px){
+    display: none;
+  }
+}
+
+.btnWrap {
+  display: none;
+  @media (max-width: 1070px){
+    display: block;
+  }
+  
+}
+
+.mobileNav {
+  display: none;
+
+  @media (max-width: 1070px){
+    &_opened {
+      display: flex;
+      flex-grow: 1;
+      overflow-y: auto;
+    }
+  
+  }
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3vw;
+  width: 100%;
+}
+
+.mobileLink {
+  display: block;
+  width: 100%;
+  text-align: center;
+
+  color: $clr-primary;
+  font-weight: 600;
+  padding: 1em;
+  border-bottom: 1px solid #c4cde1;
+
+  &:hover {
+    text-decoration: none;
+    color: $clr-primary;
+  }
+}
+
+.link {
+  cursor: pointer;
+
+  &.active {
+    cursor: default;
+  }
+}
