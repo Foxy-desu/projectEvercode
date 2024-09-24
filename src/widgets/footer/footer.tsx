@@ -1,4 +1,4 @@
-import NavigationMenu, { INavProps } from "../../../entities/headerNavigation/ui/navigationMenu"
+import NavigationMenu, { INavProps } from "../../shared/navigationMenu/navigationMenu.tsx";
 
 const Footer =({navMenuLinks}:{navMenuLinks:INavProps['links']})=> {
 
