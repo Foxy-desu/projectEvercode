@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { navMenuLinks } from '../appData/navigationData';
-import Header from '../components/header/header';
-import Footer from '../components/footer/footer';
+import Header from '../../widgets/header/header.tsx';
+import Footer from '../../widgets/footer/footer.tsx';
 
 const RootElement =()=> {
   return (
