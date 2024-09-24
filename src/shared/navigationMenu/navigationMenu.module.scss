@@ -1,0 +1,22 @@
+.navBar {
+  flex-shrink: 0;
+}
+
+.headerList {
+  display: flex;
+}
+
+.headerList.navList {
+  padding-left: 0;
+}
+
+.navItem {
+  box-sizing: content-box;
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+
+  &:last-child{
+    margin-right: 0;
+  }
+}
