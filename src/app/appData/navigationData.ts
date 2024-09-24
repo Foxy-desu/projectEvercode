@@ -1,30 +1,39 @@
-import { INavProps } from "../../entities/headerNavigation/ui/navigationMenu";
+import { INavProps } from "../../shared/navigationMenu/navigationMenu";
 
 export const navMenuLinks: INavProps['links'] = [
   { to: 'products',
-    text: 'Products',
+    text: 'Продукты',
     type: 'dropdown',
     inner: [
-      {to: 'products/evercourse', text: 'evercourse'},
-      {to: 'products/evercourse-pro', text: 'evercourse Pro'},
-      {to: 'products/evercourse-plus', text: 'evercourse Plus'}
+      {to: 'products/white-label', text: 'Everchain White Label Wallet'},
+      {to: 'products/evervault', text: 'Evervault'},
+      {to: 'products/everCourse', text: 'EverCourse'},
+      {to: 'products/evercode-online-medic', text: 'Evercode Online Medic'},
+      {to: 'products/evermarket', text: 'Marketplace Evermarket'},
+      {to: 'products/everchain-sdk', text: 'Everchain SDK'},
     ]
   },
   { to: 'cases',
-    text: 'Cases',
+    text: 'Кейсы',
     type: 'dropdown',
     inner: [
-      {to: 'cases/1', text: '1'},
-      {to: 'cases/2', text: '2'},
-      {to: 'cases/3', text: '3'}
+      {to: 'cases/cadfem-version-2', text: 'CRM решения'},
+      {to: 'cases/escar', text: 'Системы мониторинга'},
+      {to: 'cases/foodfox', text: 'Электронная коммерция'},
+      {to: 'cases/ondoc/', text: 'Медицина'},
+      {to: 'ccases/ball', text: 'Образование'}
     ]
   },
   { to: 'carreer',
-    text: 'Carreer',
+    text: 'Карьера',
+    type: 'simple'
+  },
+  { to: 'blog',
+    text: 'Блог',
     type: 'icon'
   },
   { to: 'contacts',
-    text: 'Contacts',
+    text: 'Контакты',
     type: 'simple'
   }
 ]
