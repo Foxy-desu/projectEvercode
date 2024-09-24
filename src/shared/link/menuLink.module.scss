@@ -1,11 +1,4 @@
-//colors var
-$clr-primary: #1b3070;
-$clr-text-lt: #a4acc6;
-$mainFontSize: 14px;
-$clr-accent: #8ac249;
-
-
-
+@import '../../app/assets/styles/variables';
 .link {
   box-sizing: content-box;
   position: relative;
@@ -46,17 +39,23 @@ $clr-accent: #8ac249;
   &_simplified {
     color: $clr-text-lt;
     text-decoration: none;
+    padding: 0.2em;
 
     &:hover {
       color: $clr-text-lt;
       text-decoration: none;
+    }
+
+    &.active {
+      cursor: default;
+      border: 1px dashed $clr-text-lt;
     }
   }
 }
 
 .linkWrap {
   position: relative;
-  padding-right: 15px;
+  padding: 12px 15px 12px 0;
   
   &::after {
     content: "";
@@ -74,20 +73,25 @@ $clr-accent: #8ac249;
   }
 }
 
-.dropdownWrap{
-  
-}
 .dropdownWrap:hover .link::before {
   width: 100%;
 }
 
-.dropDownLink {
-
+.dropListWrap {
+  padding: 0;
   
 }
 
 .innerLink {
+  padding: 12px 24px !important;
+  color: $clr-primary !important;
+  font-weight: 400 !important;
+  font-size: $mainFontSize !important;
+  text-transform: capitalize;
 
+  &:hover {
+    background-color: $clr-background;
+  }
 }
 
 .iconLink {
