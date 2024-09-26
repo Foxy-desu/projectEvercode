@@ -1,0 +1,17 @@
+@import '../../app/assets/styles/mixins';
+@import '../../app/assets/styles/variables';
+
+.section {
+  @include limited();
+
+}
+
+.title {
+  color: $clr-text-ltr;
+  text-align: center;
+
+  & span {
+    display: block;
+    text-align: center;
+  }
+}
