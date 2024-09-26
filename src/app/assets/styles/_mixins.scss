@@ -1,0 +1,29 @@
+
+@mixin limited() {
+  //for header and content
+  padding: 0 150px;
+  width: 100%;
+  max-width: 1600px;
+
+  @media (max-width: 900px) {
+    padding: 0 calc(10vw/1.5);
+  }
+}
+
+@mixin centered() {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin adaptive-font-size($maxLayoutWidth: 1600, $pcFontSize, $mobileFontSize, $minLayoutWidth: 360) {
+  $addSize: $pcFontSize - $mobileFontSize;
+  $addMobileSize: $addSize + $addSize * 0.7;
+  @media screen and (max-width: 1300px) {
+      font-size: calc(#{$mobileFontSize + px} + #{$addMobileSize} * ((100vw - #{$minLayoutWidth + px}) / #{$maxLayoutWidth}));
+  }
+
+  // @media (min-width: 767px) {
+  //     font-size: calc(#{$mobileFontSize + px} + #{$addSize} * (100vw / #{$maxLayoutWidth}));
+  // }
+}
