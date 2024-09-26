@@ -15,4 +15,14 @@ export function breakLine(string:string){
   }
   
   return parse(unParsed.join(' '));
-}
+};
+
+export function parseHTML(string:string){
+  return parse(string);
+};
+
+export  function blockScroll(isBurgerOpen:boolean){
+  isBurgerOpen
+  ? document.documentElement.style.position="fixed"
+  : document.documentElement.style.position="initial";
+};
