@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import RootElement from "./root";
+import MainPage from "../../pages/main/ui/mainPage";
 
 export const router = createBrowserRouter([
   {
@@ -7,7 +8,7 @@ export const router = createBrowserRouter([
     element: <RootElement />,
     errorElement: <div>404 oops!</div>,
     children: [
-      {path: "/", element: <div>Main</div>},
+      {path: "/", element: <MainPage/>},
       { path: "products", element: <div>Products</div> },
       { path: "cases", element: <div>Cases</div> },
       { path: "carreer", element: <div>Carreer</div> },
