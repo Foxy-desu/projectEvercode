@@ -1,0 +1,31 @@
+@import '../../app/assets/styles/variables';
+@import '../../app/assets/styles/mixins';
+
+.btn {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 1.75rem;
+    height: 2.37rem;
+    background-image: url('../../app/assets/img/png/mouse.png');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin-right: 0.5rem;
+  }
+}
+
+.text {
+  color: $clr-accent;
+  font-family: interregular, arial, "sans-serif";
+  text-transform: uppercase;
+  font-size: $smallFontSize;
+  font-weight: 600;
+  line-height: 1.5rem;
+}
