@@ -53,7 +53,7 @@ const DropdownLink =({to, text, innerLinks}:IDLinkProps)=> {
             {text}
         </NavLink>
       </div>
-      <div className={cl.dropListWrap} data-uk-dropdown={`delay-hide: 200; offset: -0`}>
+      <div className={cl.dropListWrap} data-uk-dropdown={`delay-hide: 200; offset: -0; shift: false; flip:false`}>
         <ul className={dropDownLibClass}>
           {renderLinks(innerLinks)}
         </ul>
