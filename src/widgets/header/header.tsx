@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BurgerBtn from "../../shared/burgerBtn/burgerBtn.tsx";
 import MainLogo from "../../shared/logo/logo.tsx";
 import NavigationMenu, { INavProps } from "../../shared/navigationMenu/navigationMenu.tsx";
 import cl from './header.module.scss';
 import { NavLink} from "react-router-dom";
+import { blockScroll } from "../../shared/utils/helpers/index.ts";
 
 const Header =({navMenuLinks}:{navMenuLinks:INavProps['links']})=>{
   const [isBurgerOpen, setIsBurgerOpen] = useState(false);
@@ -13,14 +14,24 @@ const Header =({navMenuLinks}:{navMenuLinks:INavProps['links']})=>{
   function closeBurger(){
     setIsBurgerOpen(false);
   };
-  const headerStyle = `${cl.header} ${isBurgerOpen? cl.header_expanded:''}`
+
+  const headerStyle = `${cl.header} ${cl.centered} ${isBurgerOpen? cl.header_expanded:''}`
   const logoLinkStyle = (isActive : boolean) => isActive ? `${cl.link} ${cl.active}` : `${cl.link}`;
   const mobNavStyle = `${cl.mobileNav} ${isBurgerOpen? cl.mobileNav_opened : ''}`;
 
+  useEffect(()=>{
+    blockScroll(isBurgerOpen);
+  }, [isBurgerOpen])
   return (
     <header className={headerStyle}>
-      <div className={`${cl.controlsWrap} ${cl.centered}`}>
-        <NavLink className={({isActive})=>logoLinkStyle(isActive)} to={'/'}><MainLogo scheme={'dark'} alt={"Логотип компании Evercode lab"}/></NavLink>
+      <div className={`${cl.controlsWrap} ${cl.limited}`}>
+        <NavLink
+          className={({isActive})=> isBurgerOpen? logoLinkStyle(false):logoLinkStyle(isActive)}
+          to={'/'}
+          onClick={closeBurger}
+        >
+          <MainLogo scheme={'dark'} alt={"Логотип компании Evercode lab"}/>
+        </NavLink>
         <div className={cl.navBarWrap}>
           <NavigationMenu type={'header'} links={navMenuLinks}/>
         </div>
