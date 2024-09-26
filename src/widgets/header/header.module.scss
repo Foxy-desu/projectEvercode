@@ -1,24 +1,24 @@
 @import '../../app/assets/styles/variables';
-
+@import '../../app/assets/styles/mixins';
 
 .centered {
-  //for header and content
-  padding: 0 150px;
-  width: 100%;
-  max-width: 1600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  @media (max-width: 800px) {
-    padding: 0 calc(10vw/1.5);
-  }
+.limited {
+  //for header and content
+  @include limited()
 }
 
 .header {
-  position: absolute;
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  align-items: center;
+  width: 100%;
   &_expanded {
-    @media (max-width: 1070px) {
+    @media (max-width: 1130px) {
       position: fixed;
       background-color: $clr-background;
       z-index: 5;
@@ -32,18 +32,11 @@
 .controlsWrap {
   display: flex;
   flex-shrink: 1;
-  // padding: 0 150px;
   justify-content: space-between;
   align-items: center;
   gap: 50px;
-  // width: 100%;
-  // max-width: 1600px;
   height: 76px;
   transition: .1s ease-out;
-
-  // @media (max-width: 800px) {
-  //   padding: 0 calc(10vw/1.5);
-  // }
 }
 
 .link {
@@ -54,14 +47,15 @@
 
 .navBarWrap {
   display: block;
-  @media (max-width: 1070px){
+  flex-shrink: 0;
+  @media (max-width: 1130px){
     display: none;
   }
 }
 
 .btnWrap {
   display: none;
-  @media (max-width: 1070px){
+  @media (max-width: 1130px){
     display: block;
   }
   
@@ -70,10 +64,11 @@
 .mobileNav {
   display: none;
 
-  @media (max-width: 1070px){
+  @media (max-width: 1130px){
     &_opened {
       display: flex;
       flex-grow: 1;
+      width: 100%;
       overflow-y: auto;
     }
   
