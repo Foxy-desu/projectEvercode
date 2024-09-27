@@ -77,13 +77,10 @@
   grid-area: btn;
   align-self: start;
 
-  @media(max-width: 1300px){
-    align-self: end;
-  }
-
-  @media (max-width: 1130px) {
+  @media(max-width: 1130px){
     align-self: center;
   }
+
 }
 
 .imageWrap{
