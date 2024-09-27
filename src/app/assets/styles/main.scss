@@ -1,10 +1,13 @@
-//the right sewuence of imports for resetting the lib's styles
 @import "./fonts";
 @import "uikit/dist/css/uikit.min.css";
 @import "./reset.scss";
 
 :root {
   color-scheme: light dark;
+}
+
+#root {
+  background: rgb(239, 238, 235);
 }
 
 .visually-hidden {
