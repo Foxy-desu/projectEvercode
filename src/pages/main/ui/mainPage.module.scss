@@ -1,6 +1,8 @@
 @import "../../../app/assets/styles/mixins";
 @import "../../../app/assets/styles/variables";
+@import "../../../app/assets/styles/placeholders";
 
+//TODO: adjust highlite blocks for vports with different scroll bar sizes
 .contentWrap {
   @include centered();
   position: relative;
@@ -8,7 +10,111 @@
   background-color: $clr-background-dk;
   background-image: url('../../../app/assets/img/png/tile-right.png'), url('../../../app/assets/img/png/tile-left.png');
   background-position: right top, left top;
-  background-repeat: no-repeat, no-repeat;
+  background-repeat: no-repeat;
   background-size: 250px;
-  padding: 10rem 0 6.25rem;
+  padding-top: clamp( 31px, 10vw, 160px);
+  padding-bottom: clamp(31px, 6.25vw, 100px);
+
+  @media (max-width: 705px) {
+  background-image: url('../../../app/assets/img/png/tile-left.png');
+  background-position: left top;
+  }
+}
+
+.appList {
+  @extend %noPadMarg;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+
+}
+
+.listItem{
+  flex-basis: 215px;
+  height: 180px;
+  border: 1px solid rgba(255, 255, 255, .06);
+  
+  &:nth-child(2n + 1) {
+    background-color: rgba(255, 255, 255, .06);
+    border: 1px solid rgba(255, 255, 255, 0);
+
+  }
+
+  @media ((max-width: 1429px)), ((max-width: 1130px) and (min-width: 1045px)) {
+
+    &:nth-child(n) {
+      background-color: transparent;
+      border: 1px solid rgba(255, 255, 255, .06);
+    }
+
+    &:nth-child(1),
+    &:nth-child(4),
+    &:nth-child(5),
+    &:nth-child(8),
+    &:nth-child(n + 9) {
+      background-color: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, 0);
+  
+    }
+  }
+
+  @media ((max-width: 1204px) and (min-width: 1131px)), (max-width: 1044px) and (min-width: 705px){
+    &:nth-child(n) {
+      background-color: transparent;
+      border: 1px solid rgba(255, 255, 255, .06);
+    }
+
+    &:nth-child(1),
+    &:nth-child(3),
+    &:nth-child(5),
+    &:nth-child(7),
+    &:nth-child(n + 9) {
+      background-color: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, 0);
+    }
+
+  }
+
+  @media (max-width: 704px) {
+    &:nth-child(n) {
+      background-color: transparent;
+      border: 1px solid rgba(255, 255, 255, .06);
+    }
+
+    &:nth-child(1),
+    &:nth-child(4),
+    &:nth-child(5),
+    &:nth-child(8),
+    &:nth-child(9) {
+      background-color: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, 0);
+    }
+  }
+
+  @media (max-width: 471px) {
+    &:nth-child(n) {
+      background-color: transparent;
+      border: 1px solid rgba(255, 255, 255, .06);
+    }
+
+    &:nth-child(2n + 1) {
+      background-color: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, 0);
+    }
+  }
+
+  @media (max-width: 790px) {
+    flex-basis: 192px;
+  }
+}
+
+.reduced:nth-child(n+5) {
+  display: none;
+}
+
+.btnWrap {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
 }
