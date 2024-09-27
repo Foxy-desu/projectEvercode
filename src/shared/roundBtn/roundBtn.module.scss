@@ -1,0 +1,42 @@
+@import '../../app/assets/styles/_variables.scss';
+.btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  border: none;
+  background-color: none;
+  border-radius: 25px;
+
+  &_slide {
+    background-color: $clr-accent;
+
+    &::before {
+      display: block;
+      content: '';
+      width: 16px;
+      height: 16px;
+      background-image: url('../../app/assets/img/svg/arrow-left.svg');
+    }
+  }
+
+  &_expand {
+    background-color: $clr-background-dk;
+
+    &::before {
+      display: block;
+      content: '';
+      width: 16px;
+      height: 16px;
+      border-width: 0 2px 2px 0;
+      border-style: solid;
+      border-color: $clr-text-ltr;
+      transform: rotate(45deg);
+
+
+    }
+  }
+}
