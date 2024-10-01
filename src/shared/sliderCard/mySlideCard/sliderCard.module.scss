@@ -1,0 +1,60 @@
+@import "../../../app/assets/styles/variables";
+@import "../../../app/assets/styles/placeholders";
+
+.card {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  height: 100%;
+  padding: 1.2rem;
+  background-color: $clr-background;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.imageWrap {
+  position: relative;
+  height: 138px;
+  width: auto;
+}
+
+.cardImg {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 0;
+}
+
+.title {
+  @extend %montserrat-500;
+  @extend %noPadMarg;
+  font-size: 1.25rem;
+  text-align: center;
+  color: $clr-primary !important;
+  margin-bottom: 1rem
+}
+
+.desc {
+  @extend %inter-400;
+  @extend %noPadMarg;
+  font-size: 1rem;
+  color: $clr-text-dk !important;
+  text-align: center;
+  margin-bottom: 0.8rem
+}
+
+.extra {
+  @extend %inter-400;
+  @extend %noPadMarg;
+  font-size: 0.8rem;
+  color: $clr-text-dk !important;
+  text-align: center;
+}
