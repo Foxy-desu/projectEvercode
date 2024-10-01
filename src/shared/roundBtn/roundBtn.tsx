@@ -7,7 +7,7 @@ interface IRoundBtn extends React.HTMLAttributes<HTMLButtonElement> {
 const RoundBtn =({purpose='slideControl',prompt,...props}:IRoundBtn)=> {
   const btnStyle = `${cl.btn} ${purpose === 'slideControl' ? cl.btn_slide : cl.btn_expand}`
   return (
-    <button className={btnStyle} {...props}>
+    <button className={btnStyle} type='button' {...props}>
       <span className='visually-hidden'>{prompt}</span>
     </button>
   )
