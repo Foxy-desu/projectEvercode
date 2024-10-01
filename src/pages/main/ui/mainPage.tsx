@@ -10,11 +10,22 @@ import CardWithLogo from '../../../shared/cardWithLogo/cardWithLogo';
 import { useViewportWidth } from '../../../shared/utils/hooks/getViewportWidth';
 import { useStateOnThreshold } from '../../../shared/utils/hooks/useStateOnThreshold';
 import RoundBtn from '../../../shared/roundBtn/roundBtn';
- // TODO: implement sliders, slider cards and footer
- // TODO: improve styling for different viewportwidth
- // TODO: fix viewportwidth getting (for different browsers viewports)
+import Slider from '../../../shared/slider/slider';
+import { productsList } from '../../../app/appData/productsList';
+import { casesList } from '../../../app/appData/casesList';
+//TODO: implement rates and comments section
+ // TODO: footer
+ //TODO: cookie message
+ // TODO implement favicon
+ //TODO: image optimization
  // TODO: implement good 404 page
  // TODO: implement lazyLoading of pages
+ // TODO: fix viewportwidth getting (for different browsers viewports)
+ // TODO: improve styling for different viewportwidth
+ // TODO: clean styles
+ //TODO: implement chsnge navlink for text if not active
+ //
+
 const MainPage =()=>{
   const threshold = 704;
   const viewportWidth = useViewportWidth();
@@ -72,14 +83,10 @@ const MainPage =()=>{
         : ''}
       </Section>
       <Section sectionTitle='Наши продукты'>
-        <ul className={cl.serviceList}>
-          {/* Add your service list items here */}
-        </ul>
+        <Slider items={productsList}/>
       </Section>
       <Section sectionTitle='Наша экспертиза'>
-        <ul className={cl.serviceList}>
-          {/* Add your service list items here */}
-        </ul>
+        <Slider items={casesList}/>
       </Section>
     </div>
     </>
