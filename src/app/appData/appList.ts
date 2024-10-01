@@ -1,13 +1,3 @@
-// import cadfem from '../assets/img/png/cadfem.png';
-// import foodfox from '../assets/img/png/foodfox.png';
-// import tdcloud from '../assets/img/png/td-cloud.png';
-// import reksoft from '../assets/img/png/reksoft.png';
-// import guardaWallet from '../assets/img/png/guarda.png';
-// import hellan from '../assets/img/png/gelan.png';
-// import frostWallet from '../assets/img/png/frostWallet.png';
-// import ondock from '../assets/img/png/ondock.png';
-// import kelnik from '../assets/img/png/kelnik.png';
-// import cherrySwap from '../assets/img/png/cherry.png';
 
 export const appList = [
   { name: 'Cadfem', logo: "cadfem", url: 'https://www.cadfem-cis.ru/' },
