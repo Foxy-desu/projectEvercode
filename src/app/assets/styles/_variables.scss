@@ -5,9 +5,15 @@ $clr-text-lt: #a4acc6;
 $clr-text-ltr: #fff;
 $clr-accent: #8ac249;
 $clr-background: #efeeeb;
+$clr-background-mild: #e5e5e5;
 $clr-background-dk: #4862b1;
 
 //font-size var
 $smallFontSize: 0.875rem;
 $mainFontSize: 1rem;
 $mainHeader: 3rem;
+
+//breakpoints
+$breakpoint-sm: 767px;
+$breakpoint-md: 900px;
+$breakpoint-lg: 1200px;
