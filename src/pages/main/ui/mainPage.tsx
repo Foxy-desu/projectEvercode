@@ -1,6 +1,4 @@
-import HeroSection, { IHeroSectionProps } from './heroSection/heroSection';
-import heroLg from '../../../app/assets//img/png/Main.png';
-import heroSm from '../../../app/assets/img/png/Main (395).png';
+import HeroSection  from './heroSection/heroSection';
 import cl from './mainPage.module.scss';
 import { TRef } from '../../../shared/section/section';
 import { useRef } from 'react';
@@ -13,7 +11,9 @@ import RoundBtn from '../../../shared/roundBtn/roundBtn';
 import Slider from '../../../shared/slider/slider';
 import { productsList } from '../../../app/appData/productsList';
 import { casesList } from '../../../app/appData/casesList';
-//TODO: implement rates and comments section
+import { feedbackCards } from '../../../app/appData/feedbackList';
+import FeedbackSection from './feedbackSection/feedbackSection';
+import { heroImages } from '../../../app/appData/heroSectionImages';
  // TODO: footer
  //TODO: cookie message
  // TODO implement favicon
@@ -30,19 +30,7 @@ const MainPage =()=>{
   const threshold = 704;
   const viewportWidth = useViewportWidth();
   const {isThresholdReached:shouldBlockChange, resetThresholdReach} = useStateOnThreshold({value:viewportWidth, compareOperator:'<', threshold, reconcilation: false});
-
-
   const scrollTarget = useRef<TRef>(null)
-  const heroImages:IHeroSectionProps['sectionImages'] = {
-    big: {
-      url: heroLg,
-      width: 788,
-    },
-    small: {
-      url: heroSm,
-      width: 395,
-    },
-  };
   function slideIntoView(){
     const scrollTargetNode = scrollTarget.current;
     if(scrollTargetNode) {
@@ -54,41 +42,44 @@ const MainPage =()=>{
   };
   return (
     <>
-    <HeroSection
-    sectionTitle='<span>Evercode Lab</span> Объединяем бизнес и&nbsp;технологии'
-    sectionImages={heroImages}
-    smallImgMaxVW={500}
-    nextBtnHandler={slideIntoView}
-    altTitle=''/>
-    <div className={cl.contentWrap}>
-      <Section
-        ref={scrollTarget}
-        sectionTitle='<span>Разрабатываем микросервисы,</span> мобильные и&nbsp;веб-приложения для бизнеса и&nbsp;стартапов'>
-        <ul className={cl.appList}>
-          {appList.map((item) => {
-            const listItemStyle = `${cl.listItem} ${shouldBlockChange? cl.reduced: ''}`
-            return (
-              <li className={listItemStyle} key={item.name} >
-                <CardWithLogo logo={item.logo} title={item.name} link={item.url}/>
-              </li>
+      <HeroSection
+      sectionTitle='<span>Evercode Lab</span> Объединяем бизнес и&nbsp;технологии'
+      sectionImages={heroImages}
+      smallImgMaxVW={500}
+      nextBtnHandler={slideIntoView}
+      altTitle=''/>
+      <div className={cl.contentWrap}>
+        <Section
+          ref={scrollTarget}
+          sectionTitle='<span>Разрабатываем микросервисы,</span> мобильные и&nbsp;веб-приложения для бизнеса и&nbsp;стартапов'>
+          <ul className={cl.appList}>
+            {appList.map((item) => {
+              const listItemStyle = `${cl.listItem} ${shouldBlockChange? cl.reduced: ''}`
+              return (
+                <li className={listItemStyle} key={item.name} >
+                  <CardWithLogo logo={item.logo} title={item.name} link={item.url}/>
+                </li>
+              )
+            })}
+          </ul>
+          {shouldBlockChange
+            ?(
+              <div className={cl.btnWrap}>
+                <RoundBtn purpose='expandControl' prompt='Раскрыть список' onClick={resetThresholdReach} />
+              </div>
             )
-          })}
-        </ul>
-        {shouldBlockChange
-          ?(
-            <div className={cl.btnWrap}>
-              <RoundBtn purpose='expandControl' prompt='Раскрыть список' onClick={resetThresholdReach} />
-            </div>
-          )
-        : ''}
-      </Section>
-      <Section sectionTitle='Наши продукты'>
-        <Slider items={productsList}/>
-      </Section>
-      <Section sectionTitle='Наша экспертиза'>
-        <Slider items={casesList}/>
-      </Section>
-    </div>
+          : ''}
+        </Section>
+        <Section sectionTitle='Наши продукты'>
+          <Slider items={productsList}/>
+        </Section>
+        <Section sectionTitle='Наша экспертиза'>
+          <Slider items={casesList}/>
+        </Section>
+      </div>
+      <div className={cl.feedbacksWrap}>
+          <FeedbackSection feedbackCards={feedbackCards}/>
+      </div>
     </>
   )
 };
