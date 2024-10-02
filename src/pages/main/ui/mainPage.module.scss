@@ -4,7 +4,7 @@
 
 //TODO: adjust highlite blocks for vports with different scroll bar sizes
 .contentWrap {
-  @include centered();
+  @extend %centered;
   position: relative;
   min-height: 100dvh;
   background-color: $clr-background-dk;
@@ -117,4 +117,17 @@
   display: flex;
   justify-content: center;
   padding: 1rem;
+}
+
+.feedbacksWrap {
+  @extend %centered;
+  padding-top: 10rem;
+  background-color: $clr-background-mild;
+  
+  @media (min-width: $breakpoint-lg) {
+    background-image: url('../../../app/assets/img/svg/quote-bg.svg');
+    background-position: right top 80px;
+    background-repeat: no-repeat;
+    background-size: 60cqh;
+  }
 }
