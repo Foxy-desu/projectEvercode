@@ -1,4 +1,4 @@
-import { ISliderCardProps } from "../../shared/sliderCard/uiKitCard/slideCard";
+import { ISliderCardProps } from '../../shared/sliderCard/mySlideCard/sliderCard';
 import medic from '../assets/img/svg/Medic.svg';
 import market from '../assets/img/svg/Evermarket.svg';
 import course from '../assets/img/svg/Course.svg';
@@ -9,7 +9,6 @@ import evervault from '../assets/img/png/Vault-cropped-optimized.png';
 export const productsList: ISliderCardProps[] = [
   {
     id: 1,
-    linkType: 'outer',
     pageLink: 'https://эверкодлаб.рф/',
     cardTitle: 'Эверволлет',
     cardDesc: 'White label решение для работы с&nbsp;цифровыми активами.',
@@ -18,7 +17,6 @@ export const productsList: ISliderCardProps[] = [
   },
   {
     id: 2,
-    linkType: 'inner',
     pageLink: 'products/evercode-online-medic',
     cardTitle: 'Evercode<br/>Online Medic',
     cardDesc: 'Сервис для онлайн-консультаций с&nbsp;врачами',
@@ -36,7 +34,6 @@ export const productsList: ISliderCardProps[] = [
   },
   {
     id: 3,
-    linkType: 'inner',
     pageLink: 'products/evermarket',
     cardTitle: 'Marketplace<br/>Evermarket',
     cardDesc: 'Сервис электронной коммерции',
@@ -53,9 +50,8 @@ export const productsList: ISliderCardProps[] = [
   },
   {
     id: 4,
-    linkType: 'inner',
     pageLink: 'products/evercourse',
-    cardTitle: '<br/>Evercourse',
+    cardTitle: 'Evercourse',
     cardDesc: 'Платформа для онлайн-обучения',
     extraInfo: '',
     images: {
@@ -70,7 +66,6 @@ export const productsList: ISliderCardProps[] = [
   },
   {
     id: 5,
-    linkType: 'outer',
     pageLink: 'https://wallet.evercodelab.com/',
     cardTitle: 'Everchain<br/>White Label Wallet',
     cardDesc: 'Некастодиальные криптокошельки для токенов',
@@ -87,9 +82,8 @@ export const productsList: ISliderCardProps[] = [
   },
   {
     id: 6,
-    linkType: 'inner',
     pageLink: '/products/everchain-sdk',
-    cardTitle: '<br/>Everchain SDK',
+    cardTitle: 'Everchain SDK',
     cardDesc: 'Интеграция монет для некастодиальных кошельков',
     extraInfo: '',
     images: {
@@ -104,16 +98,13 @@ export const productsList: ISliderCardProps[] = [
   },
   {
     id: 7,
-    linkType: 'inner',
     pageLink: '/products/evervault',
-    cardTitle: '<br/>Evervault',
+    cardTitle: 'Evervault',
     cardDesc: 'Evervault помогает бизнесам безопасно хранить и использовать секретные данные.',
     extraInfo: '',
     images: {
       default: evervault,
       alt: 'Evercode lab: разработка решений для работы с&nbsp;конфиденциальными данными',
-      // width: 340,
-      // height: 207,
       srcSet: [
         { link: evervault, descriptor: '' },
         { link: evervault, descriptor: '' },
