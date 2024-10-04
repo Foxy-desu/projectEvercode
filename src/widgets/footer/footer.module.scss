@@ -1,0 +1,184 @@
+@import "../../app/assets/styles/placeholders";
+@import "../../app/assets/styles/variables";
+
+$breakpoint-mid: 946px;
+$clr-text: #a4acc6;
+.footer {
+  @extend %centered;
+  background-color: $clr-primary;
+  padding: 1.562rem;
+}
+
+.content {
+  @extend %limited;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+
+}
+
+.footer * {
+  color: $clr-text;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.footer a:hover {
+  color: $clr-text;
+}
+
+.footerPart {
+
+  &:not(:first-child) {
+    margin-top: 0.625rem;
+  }
+}
+
+.title {
+  font-weight: 600;
+  margin-bottom: 0.625rem;
+}
+
+.logo {
+  display: block;
+  width: 100%;
+  max-width: 270px;
+
+  @media (max-width: ($breakpoint-lg - 1)) {
+    display: none;
+  }
+}
+
+.companyWrap {
+  display: block;
+  @media (max-width: ($breakpoint-lg - 1)) {
+    display: none;
+  }
+
+   @media (max-width: ($breakpoint-mid)) {
+    display: block;
+    order: 3;
+    width: 100%;
+  }
+}
+
+.companyInfo {
+   @media (max-width: ($breakpoint-mid)) {
+    display: flex;
+  }
+}
+
+.companyInfo li {
+  margin-bottom: 0.625rem;
+
+  @media (max-width: ($breakpoint-lg - 1)) {
+   margin-bottom: 0;
+  }
+
+  @media (max-width: ($breakpoint-mid)) {
+    &:not(:first-child) {
+      margin-right: 2rem;
+    }
+  }
+}
+
+.companySmall {
+  display: none;
+
+  @media (max-width: ($breakpoint-lg - 1)) {
+   display: block;
+   margin-top: 2rem;
+  }
+
+  @media (max-width: ($breakpoint-mid)) {
+    display: none;
+  }
+}
+
+.navWrap,
+.contactsWrap {
+  @media (max-width: ($breakpoint-mid)) {
+    display: none;
+  }
+}
+
+.socialsWrap {
+  @media (max-width: ($breakpoint-mid)) {
+    margin: 0 auto;
+
+    & > .title {
+     display: none;
+    }
+  }
+}
+
+.list {
+  @extend %noPadMarg;
+}
+
+.list a {
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.socialList {
+  @extend %noPadMarg;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.location {
+  margin-top: 0.625rem;
+}
+
+.socialItem {
+  width: 32px;
+  height: 32px;
+}
+
+.accordionWrap {
+  display: none;
+  @media (max-width: ($breakpoint-mid)) {
+    width: 100%;
+    display: block;
+  }
+}
+// accordion style
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-top: 1px solid #49598d;
+  border-bottom: 1px solid #49598d;
+}
+
+.accordionTitle {
+  @extend %noPadMarg;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  align-items: center;
+  font-weight: 600;
+  color: $clr-text;
+  cursor: pointer;
+}
+
+.decor {
+  font-size: 2rem;
+}
+
+.accordionContent {
+  display: none;
+
+  &Open{
+    display: block;
+    width: 100%;
+  }
+}
