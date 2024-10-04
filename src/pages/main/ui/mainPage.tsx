@@ -14,16 +14,17 @@ import { casesList } from '../../../app/appData/casesList';
 import { feedbackCards } from '../../../app/appData/feedbackList';
 import FeedbackSection from './feedbackSection/feedbackSection';
 import { heroImages } from '../../../app/appData/heroSectionImages';
- // TODO: footer
  //TODO: cookie message
  // TODO implement favicon
- //TODO: image optimization
  // TODO: implement good 404 page
+ //TODO: image optimization
+ //TODO improve footer logo display 
  // TODO: implement lazyLoading of pages
  // TODO: fix viewportwidth getting (for different browsers viewports)
  // TODO: improve styling for different viewportwidth
- // TODO: clean styles
+ // TODO: clean styles and code
  //TODO: implement chsnge navlink for text if not active
+ //TODO: implement animation for footer accordion 
  //
 
 const MainPage =()=>{
