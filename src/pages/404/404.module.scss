@@ -1,0 +1,42 @@
+@import '../../app/assets/styles/variables';
+@import '../../app/assets/styles/placeholders';
+
+.wrap {
+  @extend %centered;
+  width: 100vw;
+  height: 100dvh;
+  justify-content: center;
+}
+
+.content {
+  @extend %centered;
+  align-items: flex-start;
+  padding: 3rem;
+  background-color: $clr-background-dk-lt;
+  border-radius: 4px;
+}
+
+.title {
+  @extend %noPadMarg;
+  color: $clr-text-ltr;
+}
+
+.text {
+  @extend %noPadMarg;
+  color: $clr-text-ltr;
+  margin-bottom: 1rem;
+}
+
+.link {
+  padding: 1rem;
+  color: $clr-text-ltr;
+  background-color: $clr-accent;
+  border-radius: 4px;
+  transition: .1s;
+
+  &:hover {
+    color: $clr-text-ltr;
+    text-decoration: none;
+    background-color: $clr-accent-dk;
+  }
+}
