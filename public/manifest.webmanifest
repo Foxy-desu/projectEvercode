@@ -1,0 +1,12 @@
+{
+  "name": "Evercode Lab",
+  "short_name": "Evercode",
+  "background_color": "#efeeeb",
+  "theme_color": "#49598d",
+  "icons": [
+    { "src": "./icons/bird-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "./icons/icon-mask.png", "type": "image/png", "sizes": "512x512", "purpose": "maskable" },
+    { "src": "./icons/bird-512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+
+}
