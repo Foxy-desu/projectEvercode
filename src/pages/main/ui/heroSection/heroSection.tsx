@@ -25,7 +25,8 @@ const HeroSection =({sectionTitle, sectionImages, smallImgMaxVW, altTitle, nextB
           srcSet={`${sectionImages.big.url} ${sectionImages.big.width}w, ${sectionImages.small.url} ${sectionImages.small.width}w`}
           sizes={`(max-width: ${smallImgMaxVW}px) ${sectionImages.small.width}px, ${sectionImages.big.width}px`}
           src={sectionImages.big.url}
-          alt={altTitle}/>
+          alt={altTitle}
+          loading='lazy'/>
         </div>
       </div>
     </section>

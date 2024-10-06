@@ -28,7 +28,8 @@ const SliderCard =({pageLink,images, cardTitle, cardDesc,extraInfo}:ISliderCardP
               <img className={cl.cardImg}
                 srcSet={images.srcSet.map(({link, descriptor})=>link+' '+descriptor).join(', ')}
                 src={images.default}
-                alt={images.alt}/>
+                alt={images.alt}
+                loading='lazy'/>
               </div>
             )
           : false

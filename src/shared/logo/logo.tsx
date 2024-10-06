@@ -9,7 +9,7 @@ interface IMainLogoProps {
 const MainLogo =({scheme, alt}:IMainLogoProps)=>{
 
   return (
-    <img className={cl.logo} src={scheme === "light"? light:dark} alt={alt} />
+    <img className={cl.logo} src={scheme === "light"? light:dark} alt={alt} loading='lazy'/>
   )
 };
 
