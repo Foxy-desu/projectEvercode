@@ -1,18 +1,58 @@
 import { createBrowserRouter } from "react-router-dom";
 import RootElement from "./root";
-import MainPage from "../../pages/main/ui/mainPage";
+import Page404 from "../../pages/404/404";
 
 export const router = createBrowserRouter([
   {
     path: '/',
     element: <RootElement />,
-    errorElement: <div>404 oops!</div>,
+    errorElement: <Page404/>,
     children: [
-      {path: "/", element: <MainPage/>},
-      { path: "products", element: <div>Products</div> },
-      { path: "cases", element: <div>Cases</div> },
-      { path: "carreer", element: <div>Carreer</div> },
-      { path: "contacts", element: <div>Contacts</div> }
+      {
+        path: "/",
+        async lazy() {
+          let Main = await import("../../pages/main/ui/mainPage");
+          return { Component: Main.default,  };
+        },
+        
+      },
+      { 
+        path: "products",
+        async lazy() {
+          let Products = await import("../../pages/products/products");
+          return { Component: Products.default };
+        },
+      },
+      { 
+        path: "cases",
+        async lazy() {
+          let Cases = await import("../../pages/cases/cases");
+          return { Component: Cases.default };
+        },
+      },
+      { 
+        path: "carreer",
+        async lazy() {
+          let Carreer = await import("../../pages/carreer/carreer");
+          return { Component: Carreer.default };
+        },
+      },
+      { 
+        path: "contacts",
+        async lazy() {
+          let Contacts = await import("../../pages/contacts/contacts");
+          return { Component: Contacts.default };
+        },
+        
+      },
+      {
+        path: 'blog',
+        async lazy() {
+          let Blog = await import("../../pages/blog/blog");
+          return { Component: Blog.default };
+        },
+        
+      }
     ]
   }
 ]);
