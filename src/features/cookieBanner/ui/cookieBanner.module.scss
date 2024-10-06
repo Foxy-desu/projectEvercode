@@ -1,0 +1,38 @@
+@import '../../../app/assets/styles/variables';
+@import '../../../app/assets/styles/placeholders';
+
+.bannerWrap {
+  width: 100%;
+  position: fixed;
+  bottom: 1rem;
+  z-index: 2147483647;
+}
+
+.banner {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  align-items: center;
+  margin: 0 auto;
+  padding: 1rem;
+  background: $clr-background-dk-lt;
+  color: $clr-text-ltr;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid rgb(0 0 0/10%);
+  width: 85vw;
+}
+
+.bannerMessage {
+  @extend %noPadMarg;
+}
+
+.btn {
+  background-color: $clr-accent;
+  color: $clr-text-ltr;
+  border: none;
+  border-radius: 4px;
+  padding: .5rem 1rem;
+  font-size: 1em;
+  cursor: pointer;
+}
