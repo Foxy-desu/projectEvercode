@@ -14,12 +14,8 @@ import { casesList } from '../../../app/appData/casesList';
 import { feedbackCards } from '../../../app/appData/feedbackList';
 import FeedbackSection from './feedbackSection/feedbackSection';
 import { heroImages } from '../../../app/appData/heroSectionImages';
- //TODO: cookie message
- // TODO implement favicon
- // TODO: implement good 404 page
  //TODO: image optimization
  //TODO improve footer logo display 
- // TODO: implement lazyLoading of pages
  // TODO: fix viewportwidth getting (for different browsers viewports)
  // TODO: improve styling for different viewportwidth
  // TODO: clean styles and code
