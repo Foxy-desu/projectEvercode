@@ -1,8 +1,8 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 import RootElement from "./root";
 import Page404 from "../../pages/404/404";
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     path: '/',
     element: <RootElement />,
