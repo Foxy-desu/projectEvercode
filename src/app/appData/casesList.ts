@@ -16,10 +16,6 @@ export const casesList: ISliderCardProps[] = [
     images: {
       default: medicine,
       alt: 'Evercode lab: IT-решения в области медицины',
-      srcSet: [
-        { link: medicine, descriptor: '' },
-        { link: medicine, descriptor: '' },
-      ]
     }
   },
   {
@@ -31,11 +27,6 @@ export const casesList: ISliderCardProps[] = [
     images: {
       default: education,
       alt: 'Evercode lab: IT-решения в области образования',
-      srcSet: [
-        { link: education, descriptor: '' },
-        { link: education, descriptor: '' },
-      ]
-
     }
 
   },
@@ -48,11 +39,6 @@ export const casesList: ISliderCardProps[] = [
     images: {
       default: crm,
       alt: 'Evercode lab: IT-решения для автоматизации бизнес-процессов',
-      srcSet: [
-        { link: crm, descriptor: '' },
-        { link: crm, descriptor: '' },
-      ]
-
     }
   },
   {
@@ -64,11 +50,6 @@ export const casesList: ISliderCardProps[] = [
     images: {
       default: commerce,
       alt: 'Evercode lab: IT-решения для электронной коммерции',
-      srcSet: [
-        { link: commerce, descriptor: '' },
-        { link: commerce, descriptor: '' },
-      ]
-
     }
   },
   {
@@ -80,10 +61,6 @@ export const casesList: ISliderCardProps[] = [
     images: {
       default: monitor,
       alt: 'Evercode lab: IT-решения для мониторинга данных',
-      srcSet: [
-        { link: monitor, descriptor: '' },
-        { link: monitor, descriptor: '' },
-      ]
     }
   },
 ]
