@@ -1,5 +1,6 @@
 import { Outlet, useNavigation } from 'react-router-dom';
 import { navMenuLinks } from '../appData/navigationData';
+import loader from '../assets/img/svg/loader.svg';
 import Header from '../../widgets/header/header.tsx';
 import Footer from '../../widgets/footer/footer.tsx';
 import CookieBannerContainer from '../../features/cookieBanner/model/cookieBannerContainer.tsx';
@@ -26,7 +27,7 @@ const RootElement =()=> {
                 background: '#fff',
                 opacity: 0.7
                 }}>
-              Загрузка страницы. Пожалуйста, подождите...
+              <img src={loader} alt="Загрузка страницы"/>
             </div>
           ) 
         }  
