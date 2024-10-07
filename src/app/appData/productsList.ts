@@ -1,10 +1,10 @@
 import { ISliderCardProps } from '../../shared/sliderCard/mySlideCard/sliderCard';
-import medic from '../assets/img/svg/Medic.svg';
-import market from '../assets/img/svg/Evermarket.svg';
-import course from '../assets/img/svg/Course.svg';
-import everchain from '../assets/img/svg/Wallet.svg';
-import sdk from '../assets/img/svg/SDK.svg';
-import evervault from '../assets/img/png/Vault-cropped-optimized.png';
+import medic from '../assets/img/png/products/Medic.png';
+import market from '../assets/img/png/products/Evermarket.png';
+import course from '../assets/img/png/products/Course.png';
+import everchain from '../assets/img/png/products/Wallet.png';
+import sdk from '../assets/img/png/products/SDK.png';
+import evervault from '../assets/img/png/products/Vault-cropped-optimized.png';
 
 export const productsList: ISliderCardProps[] = [
   {
@@ -24,10 +24,6 @@ export const productsList: ISliderCardProps[] = [
     images: {
       default: medic,
       alt: 'Evercode lab: создание платформ для онлайн консультаций с&nbsp;врачами',
-      srcSet: [
-        { link: medic, descriptor: '' },
-        { link: medic, descriptor: '' },
-      ]
 
     }
 
@@ -41,11 +37,7 @@ export const productsList: ISliderCardProps[] = [
     images: {
       default: market,
       alt: 'Evercode lab: создание онлайн маркетплейсов',
-      srcSet: [
-        { link: market, descriptor: '' },
-        { link: market, descriptor: '' },
-      ]
-
+      
     }
   },
   {
@@ -57,11 +49,7 @@ export const productsList: ISliderCardProps[] = [
     images: {
       default: course,
       alt: 'Evercode lab: создание образовательных платформ',
-      srcSet: [
-        { link: course, descriptor: '' },
-        { link: course, descriptor: '' },
-      ]
-
+      
     }
   },
   {
@@ -73,11 +61,7 @@ export const productsList: ISliderCardProps[] = [
     images: {
       default: everchain,
       alt: 'Evercode lab: создание блокчейн-сервисов для цифровых активов',
-      srcSet: [
-        { link: everchain, descriptor: '' },
-        { link: everchain, descriptor: '' },
-      ]
-
+     
     }
   },
   {
@@ -89,11 +73,7 @@ export const productsList: ISliderCardProps[] = [
     images: {
       default: sdk,
       alt: 'Evercode lab: разработка API для некастодиальных кошельков',
-      srcSet: [
-        { link: sdk, descriptor: '' },
-        { link: sdk, descriptor: '' },
-      ]
-
+     
     }
   },
   {
@@ -105,11 +85,7 @@ export const productsList: ISliderCardProps[] = [
     images: {
       default: evervault,
       alt: 'Evercode lab: разработка решений для работы с&nbsp;конфиденциальными данными',
-      srcSet: [
-        { link: evervault, descriptor: '' },
-        { link: evervault, descriptor: '' },
-      ]
-
+    
     }
   }
 ]

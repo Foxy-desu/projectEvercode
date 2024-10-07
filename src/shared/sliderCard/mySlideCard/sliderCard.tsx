@@ -13,10 +13,6 @@ export interface ISliderCardProps {
     alt: string;
     width?: number;
     height?: number;
-    srcSet: Array<{
-      link: string;
-      descriptor: string;
-    }>
   }
 }
 
@@ -26,7 +22,6 @@ const SliderCard =({pageLink,images, cardTitle, cardDesc,extraInfo}:ISliderCardP
         {images
           ? (<div className={cl.imageWrap}>
               <img className={cl.cardImg}
-                srcSet={images.srcSet.map(({link, descriptor})=>link+' '+descriptor).join(', ')}
                 src={images.default}
                 alt={images.alt}
                 loading='lazy'/>
