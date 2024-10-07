@@ -14,7 +14,7 @@ import { casesList } from '../../../app/appData/casesList';
 import { feedbackCards } from '../../../app/appData/feedbackList';
 import FeedbackSection from './feedbackSection/feedbackSection';
 import { heroImages } from '../../../app/appData/heroSectionImages';
- //TODO: image optimization
+ //TODO: image optimization 
  //TODO improve footer logo display 
  // TODO: fix viewportwidth getting (for different browsers viewports)
  // TODO: improve styling for different viewportwidth
@@ -42,9 +42,8 @@ const MainPage =()=>{
       <HeroSection
       sectionTitle='<span>Evercode Lab</span> Объединяем бизнес и&nbsp;технологии'
       sectionImages={heroImages}
-      smallImgMaxVW={500}
       nextBtnHandler={slideIntoView}
-      altTitle=''/>
+      />
       <div className={cl.contentWrap}>
         <Section
           ref={scrollTarget}
