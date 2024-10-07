@@ -1,3 +1,4 @@
+import { IHeroImages } from '../../../../app/appData/heroSectionImages';
 import SlideNextBtn from '../../../../shared/slideNextBtn/slideNextBtn';
 import { parseHTML } from '../../../../shared/utils/helpers';
 import cl from './heroSection.module.scss';
@@ -5,12 +6,10 @@ import cl from './heroSection.module.scss';
 
 export interface IHeroSectionProps {
   sectionTitle: string;
-  sectionImages: {big:{url: string, width:number}, small: {url: string, width:number}};
-  smallImgMaxVW: number;
-  altTitle: string;
+  sectionImages: IHeroImages;
   nextBtnHandler: ()=>void
 }
-const HeroSection =({sectionTitle, sectionImages, smallImgMaxVW, altTitle, nextBtnHandler}:IHeroSectionProps)=> {
+const HeroSection =({sectionTitle, sectionImages, nextBtnHandler}:IHeroSectionProps)=> {
   return (
     <section className={cl.heroSection}>
       <div className={cl.content}>
@@ -21,12 +20,22 @@ const HeroSection =({sectionTitle, sectionImages, smallImgMaxVW, altTitle, nextB
           <SlideNextBtn onClick={nextBtnHandler}/>
         </div>
         <div className={cl.imageWrap}>
-          <img
-          srcSet={`${sectionImages.big.url} ${sectionImages.big.width}w, ${sectionImages.small.url} ${sectionImages.small.width}w`}
-          sizes={`(max-width: ${smallImgMaxVW}px) ${sectionImages.small.width}px, ${sectionImages.big.width}px`}
-          src={sectionImages.big.url}
-          alt={altTitle}
-          loading='lazy'/>
+          <picture>
+            {sectionImages.sources && sectionImages.sources.map(source => {
+              return <source type={source.type} srcSet={source.srcset.map(elem=>{
+                return `${elem.url} ${elem.width}w`;
+              }).join(', ')} sizes={sectionImages.default.sizes.join(', ')}/>
+            })}
+            <img
+              src={sectionImages.default.src}
+              srcSet={sectionImages.default.srcSet.map(img=>{
+                return `${img.url} ${img.width}w`;
+              }).join(', ')}
+              sizes={sectionImages.default.sizes.join(', ')}
+              alt={sectionImages.default.alt}
+              fetchPriority="high"
+              />
+          </picture>
         </div>
       </div>
     </section>

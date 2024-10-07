@@ -1,10 +1,22 @@
 import { ISliderCardProps } from '../../shared/sliderCard/mySlideCard/sliderCard';
-import medic from '../assets/img/png/products/Medic.png';
-import market from '../assets/img/png/products/Evermarket.png';
-import course from '../assets/img/png/products/Course.png';
-import everchain from '../assets/img/png/products/Wallet.png';
-import sdk from '../assets/img/png/products/SDK.png';
-import evervault from '../assets/img/png/products/Vault-cropped-optimized.png';
+import medicPng from '../assets/img/products/png/Medic.png';
+import medicAvif from '../assets/img/products/avif/Medic.avif';
+import medicWebp from '../assets/img/products/webp/Medic.webp';
+import marketPng from '../assets/img/products/png/Evermarket.png';
+import marketAvif from '../assets/img/products/avif/Evermarket.avif';
+import marketWebp from '../assets/img/products/webp/Evermarket.webp';
+import coursePng from '../assets/img/products/png/Course.png';
+import courseAvif from '../assets/img/products/avif/Course.avif';
+import courseWebp from '../assets/img/products/webp/Course.webp';
+import everchainPng from '../assets/img/products/png/Wallet.png';
+import everchainAvif from '../assets/img/products/avif/Wallet.avif';
+import everchainWebp from '../assets/img/products/webp/Wallet.webp';
+import sdkPng from '../assets/img/products/png/SDK.png';
+import sdkAvif from '../assets/img/products/avif/SDK.avif';
+import sdkWebp from '../assets/img/products/webp/SDK.webp';
+import evervaultPng from '../assets/img/products/png/Vault-cropped-optimized.png';
+import evervaultAvif from '../assets/img/products/avif/Vault-cropped-optimized.avif';
+import evervaultWebp from '../assets/img/products/webp/Vault-cropped-optimized.webp';
 
 export const productsList: ISliderCardProps[] = [
   {
@@ -22,11 +34,12 @@ export const productsList: ISliderCardProps[] = [
     cardDesc: 'Сервис для онлайн-консультаций с&nbsp;врачами',
     extraInfo: '',
     images: {
-      default: medic,
-      alt: 'Evercode lab: создание платформ для онлайн консультаций с&nbsp;врачами',
-
+      default: {src: medicPng, alt: 'Evercode lab: создание платформ для онлайн консультаций с врачами'},
+      sources: [
+        {type: 'image/avif', src: medicAvif},
+        {type: 'image/webp', src: medicWebp},
+      ]
     }
-
   },
   {
     id: 3,
@@ -35,8 +48,11 @@ export const productsList: ISliderCardProps[] = [
     cardDesc: 'Сервис электронной коммерции',
     extraInfo: '',
     images: {
-      default: market,
-      alt: 'Evercode lab: создание онлайн маркетплейсов',
+      default: {src: marketPng, alt: 'Evercode lab: создание онлайн маркетплейсов'},
+      sources: [
+        {type: 'image/avif', src: marketAvif},
+        {type: 'image/webp', src: marketWebp},
+      ]
       
     }
   },
@@ -47,8 +63,11 @@ export const productsList: ISliderCardProps[] = [
     cardDesc: 'Платформа для онлайн-обучения',
     extraInfo: '',
     images: {
-      default: course,
-      alt: 'Evercode lab: создание образовательных платформ',
+      default: {src: coursePng, alt: 'Evercode lab: создание образовательных платформ'},
+      sources: [
+        {type: 'image/avif', src: courseAvif},
+        {type: 'image/webp', src: courseWebp},
+      ]
       
     }
   },
@@ -59,8 +78,11 @@ export const productsList: ISliderCardProps[] = [
     cardDesc: 'Некастодиальные криптокошельки для токенов',
     extraInfo: '',
     images: {
-      default: everchain,
-      alt: 'Evercode lab: создание блокчейн-сервисов для цифровых активов',
+      default: {src: everchainPng, alt: 'Evercode lab: создание блокчейн-сервисов для цифровых активов'},
+      sources: [
+        {type: 'image/avif', src: everchainAvif},
+        {type: 'image/webp', src: everchainWebp},
+      ]
      
     }
   },
@@ -71,8 +93,11 @@ export const productsList: ISliderCardProps[] = [
     cardDesc: 'Интеграция монет для некастодиальных кошельков',
     extraInfo: '',
     images: {
-      default: sdk,
-      alt: 'Evercode lab: разработка API для некастодиальных кошельков',
+      default: {src: sdkPng, alt: 'Evercode lab: разработка API для некастодиальных кошельков'},
+      sources: [
+        {type: 'image/avif', src: sdkAvif},
+        {type: 'image/webp', src: sdkWebp},
+      ]
      
     }
   },
@@ -83,9 +108,11 @@ export const productsList: ISliderCardProps[] = [
     cardDesc: 'Evervault помогает бизнесам безопасно хранить и использовать секретные данные.',
     extraInfo: '',
     images: {
-      default: evervault,
-      alt: 'Evercode lab: разработка решений для работы с&nbsp;конфиденциальными данными',
-    
+      default: {src: evervaultPng, alt: 'Evercode lab: разработка решений для работы с&nbsp;конфиденциальными данными'},
+      sources: [
+        {type: 'image/avif', src: evervaultAvif},
+        {type: 'image/webp', src: evervaultWebp},
+      ]
     }
   }
 ]

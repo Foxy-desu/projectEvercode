@@ -1,11 +1,38 @@
-import { ISliderCardProps } from "../../shared/sliderCard/mySlideCard/sliderCard.tsx";
-import medicine from '../assets/img/png/cases/medicine.png';
-import education from '../assets/img/png/cases/Education.png';
-import crm from '../assets/img/png/cases/CRM.png';
-import commerce from '../assets/img/png/cases/E-Commerce.png';
-import monitor from '../assets/img/png/cases/Monitoring.png';
+import medicinePng from '../assets/img/cases/png/medicine.png';
+import medicineAvif from '../assets/img/cases/avif/medicine.avif';
+import medicineWebp from '../assets/img/cases/webp/medicine.webp';
+import educationPng from '../assets/img/cases/png/Education.png';
+import educationAvif from '../assets/img/cases/avif/Education.avif';
+import educationWebp from '../assets/img/cases/webp/Education.webp';
+import crmPng from '../assets/img/cases/png/CRM.png';
+import crmAvif from '../assets/img/cases/avif/CRM.avif';
+import crmWebp from '../assets/img/cases/webp/CRM.webp';
+import commercePng from '../assets/img/cases/png/E-Commerce.png';
+import commerceAvif from '../assets/img/cases/avif/E-Commerce.avif';
+import commerceWebp from '../assets/img/cases/webp/E-Commerce.webp';
+import monitorPng from '../assets/img/cases/png/Monitoring.png';
+import monitorAvif from '../assets/img/cases/avif/Monitoring.avif';
+import monitorWebp from '../assets/img/cases/webp/Monitoring.webp';
 
+export interface ISliderCardImages {
+  default: {
+    src: string;
+    alt: string;
+  },
+  sources?: {
+    type: string,
+    src: string;
+  }[]
+};
 
+interface ISliderCardProps{
+  id: number;
+  pageLink: string;
+  cardTitle: string;
+  cardDesc: string;
+  extraInfo?: string;
+  images: ISliderCardImages;
+}
 export const casesList: ISliderCardProps[] = [
   {
     id: 1,
@@ -14,8 +41,12 @@ export const casesList: ISliderCardProps[] = [
     cardDesc: 'Создаем IT-решения в&nbsp;области медицины, которые повышают эффективность взаимодействия с&nbsp;клиентами.',
     extraInfo: '',
     images: {
-      default: medicine,
-      alt: 'Evercode lab: IT-решения в области медицины',
+      default: {src:medicinePng, alt: 'Evercode lab: IT-решения в области медицины'},
+      sources: [
+        {type: 'image/avif', src: medicineAvif},
+        {type: 'image/webp', src: medicineWebp},
+      ]
+      
     }
   },
   {
@@ -25,8 +56,11 @@ export const casesList: ISliderCardProps[] = [
     cardDesc: 'Разрабатываем приложения для образования с&nbsp;целью повышения качества учебного процесса.',
     extraInfo: '',
     images: {
-      default: education,
-      alt: 'Evercode lab: IT-решения в области образования',
+      default: {src: educationPng, alt: 'Evercode lab: IT-решения в области образования'},
+      sources: [
+        {type: 'image/avif', src: educationAvif},
+        {type: 'image/webp', src: educationWebp},
+      ]
     }
 
   },
@@ -37,8 +71,11 @@ export const casesList: ISliderCardProps[] = [
     cardDesc: 'Разрабатываем и&nbsp;интегрируем системы автоматизации бизнес-процессов, обеспечивая взаимодействие с&nbsp;внешними и&nbsp;внутренними сервисами компании.',
     extraInfo: '',
     images: {
-      default: crm,
-      alt: 'Evercode lab: IT-решения для автоматизации бизнес-процессов',
+      default: {src: crmPng, alt: 'Evercode lab: IT-решения для автоматизации бизнес-процессов'},
+      sources: [
+        {type: 'image/avif', src: crmAvif},
+        {type: 'image/webp', src: crmWebp},
+      ]
     }
   },
   {
@@ -48,8 +85,11 @@ export const casesList: ISliderCardProps[] = [
     cardDesc: 'Проектируем и&nbsp;разрабатываем приложения для электронной коммерции.',
     extraInfo: '',
     images: {
-      default: commerce,
-      alt: 'Evercode lab: IT-решения для электронной коммерции',
+      default: {src: commercePng, alt: 'Evercode lab: IT-решения для электронной коммерции'},
+      sources: [
+        {type: 'image/avif', src: commerceAvif},
+        {type: 'image/webp', src: commerceWebp},
+      ]
     }
   },
   {
@@ -59,8 +99,11 @@ export const casesList: ISliderCardProps[] = [
     cardDesc: 'Разрабатываем системы сбора, обработки и&nbsp;визуализации данных с&nbsp;устройств мониторинга.',
     extraInfo: '',
     images: {
-      default: monitor,
-      alt: 'Evercode lab: IT-решения для мониторинга данных',
+      default: {src:monitorPng, alt: 'Evercode lab: IT-решения для мониторинга данных'},
+      sources: [
+        {type: 'image/avif', src: monitorAvif},
+        {type: 'image/webp', src: monitorWebp},
+      ]
     }
   },
 ]

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import cl from './sliderCard.module.scss';
 import { parseHTML } from '../../utils/helpers';
+import { ISliderCardImages } from '../../../app/appData/casesList';
 
 export interface ISliderCardProps {
   id:number;
@@ -8,24 +9,27 @@ export interface ISliderCardProps {
   cardTitle: string;
   cardDesc: string;
   extraInfo?:string;
-  images?: {
-    default: string;
-    alt: string;
-    width?: number;
-    height?: number;
-  }
+  images?: ISliderCardImages
 }
 
 const SliderCard =({pageLink,images, cardTitle, cardDesc,extraInfo}:ISliderCardProps)=> {
   return (
     <Link className={cl.card} to={pageLink}>
         {images
-          ? (<div className={cl.imageWrap}>
-              <img className={cl.cardImg}
-                src={images.default}
-                alt={images.alt}
-                loading='lazy'/>
-              </div>
+          ? (
+              <picture className={cl.imageWrap}>
+                {images.sources && images.sources.map(source => {
+                  return <source type={source.type} srcSet={source.src}/>
+                })}
+                <img
+                  className={cl.cardImg}
+                  src={images.default.src}
+                  alt={images.default.alt}
+                  loading='lazy'
+                  decoding='async'
+                  />
+              </picture>
+              
             )
           : false
         }
