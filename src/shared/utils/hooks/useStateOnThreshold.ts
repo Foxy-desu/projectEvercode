@@ -4,10 +4,9 @@ interface TCheckTHProps {
   value:number,
   compareOperator:string,
   threshold:number,
-  reconcilation?: boolean;
 };
   
-export const useStateOnThreshold =({value, compareOperator, threshold, reconcilation=true}:TCheckTHProps)=> {
+export const useStateOnThreshold =({value, compareOperator, threshold}:TCheckTHProps)=> {
   function checkThreshold({...args}:Omit<TCheckTHProps, 'reconcilation'>){
     switch (args.compareOperator) {
       case '>':
@@ -25,16 +24,24 @@ export const useStateOnThreshold =({value, compareOperator, threshold, reconcila
   const [isThresholdReached, setIsThresholdReached] = useState<SetStateAction<void | boolean>>(()=>{
     checkThreshold({value, compareOperator, threshold})
   });
-  function resetThresholdReach(){
+  const [reconcilate, setReconcilate] = useState(true);
+
+  function resetThresholdReached(){
     setIsThresholdReached(false);
+  }
+  function stopReconcilation(){
+    setReconcilate(false);
   }
 
   useEffect(()=>{
-    setIsThresholdReached(checkThreshold({value, compareOperator, threshold}))
-  }, [reconcilation || value > threshold? value : null]);
+    if(reconcilate){
+      setIsThresholdReached(checkThreshold({value, compareOperator, threshold}))
+    }
+  }, [value, reconcilate]);
 
   return {
     isThresholdReached,
-    resetThresholdReach,
+    resetThresholdReached,
+    stopReconcilation
   };
 }

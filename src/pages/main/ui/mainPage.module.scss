@@ -41,7 +41,7 @@
 
   }
 
-  @media ((max-width: 1429px)), ((max-width: 1130px) and (min-width: 1045px)) {
+  @media ((max-width: calc(var(--diff) + 1429px))), ((max-width: calc(var(--diff) + 1130px)) and (min-width: calc(var(--diff) + 1045px))) {
 
     &:nth-child(n) {
       background-color: transparent;
@@ -59,7 +59,7 @@
     }
   }
 
-  @media ((max-width: 1204px) and (min-width: 1131px)), (max-width: 1044px) and (min-width: 705px){
+  @media ((max-width: calc(var(--diff) + 1204px)) and (min-width: calc(var(--diff) + 1131px))), (max-width: calc(var(--diff) + 1044px)) and (min-width: calc(var(--diff) + 705px)){
     &:nth-child(n) {
       background-color: transparent;
       border: 1px solid rgba(255, 255, 255, .06);
@@ -76,7 +76,7 @@
 
   }
 
-  @media (max-width: 704px) {
+  @media (max-width: calc(var(--diff) + 704px)) {
     &:nth-child(n) {
       background-color: transparent;
       border: 1px solid rgba(255, 255, 255, .06);
@@ -92,7 +92,7 @@
     }
   }
 
-  @media (max-width: 471px) {
+  @media (max-width: calc(var(--diff) + 471px)) {
     &:nth-child(n) {
       background-color: transparent;
       border: 1px solid rgba(255, 255, 255, .06);
@@ -104,7 +104,7 @@
     }
   }
 
-  @media (max-width: 790px) {
+  @media (max-width: calc(var(--diff) + 790px)) {
     flex-basis: 192px;
   }
 }

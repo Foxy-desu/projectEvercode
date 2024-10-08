@@ -14,7 +14,6 @@ import { casesList } from '../../../app/appData/casesList';
 import { feedbackCards } from '../../../app/appData/feedbackList';
 import FeedbackSection from './feedbackSection/feedbackSection';
 import { heroImages } from '../../../app/appData/heroSectionImages';
- //TODO: image optimization 
  //TODO improve footer logo display 
  // TODO: fix viewportwidth getting (for different browsers viewports)
  // TODO: improve styling for different viewportwidth
@@ -26,8 +25,9 @@ import { heroImages } from '../../../app/appData/heroSectionImages';
 const MainPage =()=>{
   const threshold = 704;
   const viewportWidth = useViewportWidth();
-  const {isThresholdReached:shouldBlockChange, resetThresholdReach} = useStateOnThreshold({value:viewportWidth, compareOperator:'<', threshold, reconcilation: false});
-  const scrollTarget = useRef<TRef>(null)
+  const {isThresholdReached:isMinimized, resetThresholdReached, stopReconcilation} = useStateOnThreshold({value:viewportWidth.width, compareOperator:'<', threshold});
+  const scrollTarget = useRef<TRef>(null);
+  const diffVariableCss = {'--diff': viewportWidth.diff} as React.CSSProperties;
   function slideIntoView(){
     const scrollTargetNode = scrollTarget.current;
     if(scrollTargetNode) {
@@ -50,18 +50,21 @@ const MainPage =()=>{
           sectionTitle='<span>Разрабатываем микросервисы,</span> мобильные и&nbsp;веб-приложения для бизнеса и&nbsp;стартапов'>
           <ul className={cl.appList}>
             {appList.map((item) => {
-              const listItemStyle = `${cl.listItem} ${shouldBlockChange? cl.reduced: ''}`
+              const listItemStyle = `${cl.listItem} ${isMinimized? cl.reduced: ''}`
               return (
-                <li className={listItemStyle} key={item.name} >
+                <li className={listItemStyle} key={item.name} style={diffVariableCss}>
                   <CardWithLogo logo={item.logo} title={item.name} link={item.url}/>
                 </li>
               )
             })}
           </ul>
-          {shouldBlockChange
+          {isMinimized
             ?(
               <div className={cl.btnWrap}>
-                <RoundBtn purpose='expandControl' prompt='Раскрыть список' onClick={resetThresholdReach} />
+                <RoundBtn purpose='expandControl' prompt='Раскрыть список' onClick={()=>{
+                  resetThresholdReached()
+                  stopReconcilation()}
+                } />
               </div>
             )
           : ''}
