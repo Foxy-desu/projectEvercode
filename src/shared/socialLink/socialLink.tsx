@@ -6,17 +6,15 @@ interface ISocialLink extends HTMLAttributes<HTMLAnchorElement> {
   iconSource: string;
   href: string;
 }
-const SocialLink =({srText,iconSource,...rest}: ISocialLink)=> {
+const SocialLink = ({ srText, iconSource, ...rest }: ISocialLink) => {
   return (
     <a className={cl.link} {...rest}>
-      <span className="visually-hidden">
-        {srText}
-      </span>
+      <span className="visually-hidden">{srText}</span>
       <svg className={cl.icon}>
         <use xlinkHref={iconSource} />
       </svg>
     </a>
-  )
+  );
 };
 
-export default SocialLink; 
+export default SocialLink;

@@ -13,34 +13,34 @@ export const socialsList: ISocialsItem[] = [
     name: 'medium',
     url: 'https://medium.com/evercodelab',
     icon: `${iconSprite}#medium`,
-    text: 'Наша страница на Medium'
+    text: 'Наша страница на Medium',
   },
   {
     id: 2,
     name: 'github',
     url: 'https://github.com/evercodelab',
     icon: `${iconSprite}#git`,
-    text: 'Наша страница в GitHub'
+    text: 'Наша страница в GitHub',
   },
   {
     id: 3,
     name: 'twitter',
     url: 'https://twitter.com/evercodelab',
     icon: `${iconSprite}#tweeter`,
-    text: 'Наша страница в Twitter'
+    text: 'Наша страница в Twitter',
   },
   {
     id: 4,
     name: 'facebook',
     url: 'https://www.facebook.com/evercodelab',
     icon: `${iconSprite}#facebook`,
-    text: 'Наша страница на Facebook'
+    text: 'Наша страница на Facebook',
   },
   {
     id: 5,
     name: 'linkedin',
     url: 'https://www.linkedin.com/company/evercode-lab/',
     icon: `${iconSprite}#linkedin`,
-    text: 'Наша страница на LinkedIn'
+    text: 'Наша страница на LinkedIn',
   },
-]
+];

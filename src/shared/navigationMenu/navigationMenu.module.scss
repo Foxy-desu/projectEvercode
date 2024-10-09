@@ -19,12 +19,11 @@
 .footerList .navItem {
   margin: 0;
 
-  @media (hover:hover){
+  @media (hover: hover) {
     &:hover {
       background-color: #ffffff0c;
     }
   }
-
 }
 
 .navItem {
@@ -33,7 +32,7 @@
   align-items: center;
   margin-right: 30px;
 
-  &:last-child{
+  &:last-child {
     margin-right: 0;
   }
 }

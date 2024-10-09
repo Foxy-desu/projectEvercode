@@ -11,7 +11,7 @@
   padding: 20px;
 
   &_highlighted {
-    background-color: rgba(255, 255, 255, .06);
+    background-color: rgba(255, 255, 255, 0.06);
   }
 }
 
@@ -22,7 +22,7 @@
 }
 
 .logo {
-  $sprite: url('../../app/assets/img/decorative/sprite_sheet.png'); 
+  $sprite: url('../../app/assets/img/decorative/sprite_sheet.png');
 
   &_cadfem {
     background: $sprite;
@@ -33,71 +33,71 @@
   }
 
   &_cherry {
-      background: $sprite;
-      display: inline-block;
-      height: 34px;
-      width: 142px;
-      margin-top: 14px;
-      background-position: -150px -0px;
+    background: $sprite;
+    display: inline-block;
+    height: 34px;
+    width: 142px;
+    margin-top: 14px;
+    background-position: -150px -0px;
   }
 
   &_foodfox {
-      background: $sprite;
-      display: inline-block;
-      height: 60px;
-      width: 150px;
-      background-position: -292px -0px;
+    background: $sprite;
+    display: inline-block;
+    height: 60px;
+    width: 150px;
+    background-position: -292px -0px;
   }
 
   &_frostwallet {
-      background: $sprite;
-      display: inline-block;
-      height: 60px;
-      width: 150px;
-      background-position: -442px -0px;
+    background: $sprite;
+    display: inline-block;
+    height: 60px;
+    width: 150px;
+    background-position: -442px -0px;
   }
-  
+
   &_gelan {
-      background: $sprite;
-      display: inline-block;
-      height: 60px;
-      width: 150px;
-      background-position: -592px -0px;
+    background: $sprite;
+    display: inline-block;
+    height: 60px;
+    width: 150px;
+    background-position: -592px -0px;
   }
   &_guarda {
-      background: $sprite;
-      display: inline-block;
-      height: 60px;
-      width: 150px;
-      background-position: -742px -0px;
+    background: $sprite;
+    display: inline-block;
+    height: 60px;
+    width: 150px;
+    background-position: -742px -0px;
   }
   &_kelnik {
-      background: $sprite;
-      display: inline-block;
-      height: 60px;
-      width: 150px;
-      background-position: -892px -0px;
+    background: $sprite;
+    display: inline-block;
+    height: 60px;
+    width: 150px;
+    background-position: -892px -0px;
   }
   &_ondoc {
-      background: $sprite;
-      display: inline-block;
-      height: 60px;
-      width: 150px;
-      background-position: -1042px -0px;
+    background: $sprite;
+    display: inline-block;
+    height: 60px;
+    width: 150px;
+    background-position: -1042px -0px;
   }
   &_reksoft {
-      background: $sprite;
-      display: inline-block;
-      height: 60px;
-      width: 150px;
-      background-position: -1192px -0px;
+    background: $sprite;
+    display: inline-block;
+    height: 60px;
+    width: 150px;
+    background-position: -1192px -0px;
   }
   &_td-cloud {
-      background: $sprite;
-      display: inline-block;
-      height: 60px;
-      width: 150px;
-      background-position: -1342px -0px;
+    background: $sprite;
+    display: inline-block;
+    height: 60px;
+    width: 150px;
+    background-position: -1342px -0px;
   }
 }
 
@@ -106,9 +106,7 @@
   @extend %noPadMarg;
   font-size: 1rem;
   color: $clr-text-ltr;
-  opacity: .5;
+  opacity: 0.5;
   text-align: center;
   line-height: 1.3rem;
-  
 }
-

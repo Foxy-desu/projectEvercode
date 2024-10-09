@@ -25,7 +25,7 @@
     background-color: $clr-accent;
     margin-top: 5px;
     content: '';
-    transition: .2s;
+    transition: 0.2s;
   }
 
   &.active {
@@ -58,9 +58,9 @@
 .linkWrap {
   position: relative;
   padding: 12px 15px 12px 0;
-  
+
   &::after {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     width: 7px;
@@ -96,9 +96,8 @@
 }
 
 .iconLink {
-
   &::after {
-    content: "";
+    content: '';
     display: inline-block;
     position: relative;
     margin-left: 3px;
@@ -106,10 +105,9 @@
     height: 10px;
     background: transparent url('../../app/assets/img/svg/icon-out-head.svg');
   }
-  
 }
 
-.link_simplified{
+.link_simplified {
   font-size: 16px;
   width: 100%;
   display: block;
@@ -119,6 +117,4 @@
     mask-image: url('../../app/assets/img/svg/icon-out-head.svg');
     mask-repeat: no-repeat;
   }
-  
 }
-

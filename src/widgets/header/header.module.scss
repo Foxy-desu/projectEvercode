@@ -2,7 +2,6 @@
 @import '../../app/assets/styles/placeholders';
 @import '../../app/assets/styles/mixins';
 
-
 .header {
   @extend %centered;
   width: 100%;
@@ -38,30 +37,28 @@
 .navBarWrap {
   display: block;
   flex-shrink: 0;
-  @media (max-width: $bp-header-nav){
+  @media (max-width: $bp-header-nav) {
     display: none;
   }
 }
 
 .btnWrap {
   display: none;
-  @media (max-width: $bp-header-nav){
+  @media (max-width: $bp-header-nav) {
     display: block;
   }
-  
 }
 
 .mobileNav {
   display: none;
 
-  @media (max-width: $bp-header-nav){
+  @media (max-width: $bp-header-nav) {
     &_opened {
       display: flex;
       flex-grow: 1;
       width: 100%;
       overflow-y: auto;
     }
-  
   }
 }
 

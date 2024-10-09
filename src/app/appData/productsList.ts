@@ -1,4 +1,4 @@
-import { ISliderCard} from '../../shared/sliderCard/mySlideCard/sliderCard';
+import { ISliderCard } from '../../shared/sliderCard/mySlideCard/sliderCard';
 import medicPng from '../assets/img/products/png/Medic.png';
 import medicAvif from '../assets/img/products/avif/Medic.avif';
 import medicWebp from '../assets/img/products/webp/Medic.webp';
@@ -24,8 +24,8 @@ export const productsList: ISliderCard[] = [
     pageLink: 'https://эверкодлаб.рф/',
     cardTitle: 'Эверволлет',
     cardDesc: 'White label решение для работы с&nbsp;цифровыми активами.',
-    extraInfo: 'Программа внесена в&nbsp;реестр отечественного ПО:<br/>Запись в реестре от 29.12.2022 №16143<br/>Произведена на основании поручения Министерства цифрового развития, связи и&nbsp;массовых коммуникаций Российской Федерации от&nbsp;29.12.2022 по&nbsp;протоколу заседания экспертного совета от&nbsp;23.12.2022 №2134пр',
-    
+    extraInfo:
+      'Программа внесена в&nbsp;реестр отечественного ПО:<br/>Запись в реестре от 29.12.2022 №16143<br/>Произведена на основании поручения Министерства цифрового развития, связи и&nbsp;массовых коммуникаций Российской Федерации от&nbsp;29.12.2022 по&nbsp;протоколу заседания экспертного совета от&nbsp;23.12.2022 №2134пр',
   },
   {
     id: 2,
@@ -34,12 +34,12 @@ export const productsList: ISliderCard[] = [
     cardDesc: 'Сервис для онлайн-консультаций с&nbsp;врачами',
     extraInfo: '',
     images: {
-      default: {src: medicPng, alt: 'Evercode lab: создание платформ для онлайн консультаций с врачами'},
+      default: { src: medicPng, alt: 'Evercode lab: создание платформ для онлайн консультаций с врачами' },
       sources: [
-        {type: 'image/avif', src: medicAvif},
-        {type: 'image/webp', src: medicWebp},
-      ]
-    }
+        { type: 'image/avif', src: medicAvif },
+        { type: 'image/webp', src: medicWebp },
+      ],
+    },
   },
   {
     id: 3,
@@ -48,13 +48,12 @@ export const productsList: ISliderCard[] = [
     cardDesc: 'Сервис электронной коммерции',
     extraInfo: '',
     images: {
-      default: {src: marketPng, alt: 'Evercode lab: создание онлайн маркетплейсов'},
+      default: { src: marketPng, alt: 'Evercode lab: создание онлайн маркетплейсов' },
       sources: [
-        {type: 'image/avif', src: marketAvif},
-        {type: 'image/webp', src: marketWebp},
-      ]
-      
-    }
+        { type: 'image/avif', src: marketAvif },
+        { type: 'image/webp', src: marketWebp },
+      ],
+    },
   },
   {
     id: 4,
@@ -63,13 +62,12 @@ export const productsList: ISliderCard[] = [
     cardDesc: 'Платформа для онлайн-обучения',
     extraInfo: '',
     images: {
-      default: {src: coursePng, alt: 'Evercode lab: создание образовательных платформ'},
+      default: { src: coursePng, alt: 'Evercode lab: создание образовательных платформ' },
       sources: [
-        {type: 'image/avif', src: courseAvif},
-        {type: 'image/webp', src: courseWebp},
-      ]
-      
-    }
+        { type: 'image/avif', src: courseAvif },
+        { type: 'image/webp', src: courseWebp },
+      ],
+    },
   },
   {
     id: 5,
@@ -78,13 +76,12 @@ export const productsList: ISliderCard[] = [
     cardDesc: 'Некастодиальные криптокошельки для токенов',
     extraInfo: '',
     images: {
-      default: {src: everchainPng, alt: 'Evercode lab: создание блокчейн-сервисов для цифровых активов'},
+      default: { src: everchainPng, alt: 'Evercode lab: создание блокчейн-сервисов для цифровых активов' },
       sources: [
-        {type: 'image/avif', src: everchainAvif},
-        {type: 'image/webp', src: everchainWebp},
-      ]
-     
-    }
+        { type: 'image/avif', src: everchainAvif },
+        { type: 'image/webp', src: everchainWebp },
+      ],
+    },
   },
   {
     id: 6,
@@ -93,13 +90,12 @@ export const productsList: ISliderCard[] = [
     cardDesc: 'Интеграция монет для некастодиальных кошельков',
     extraInfo: '',
     images: {
-      default: {src: sdkPng, alt: 'Evercode lab: разработка API для некастодиальных кошельков'},
+      default: { src: sdkPng, alt: 'Evercode lab: разработка API для некастодиальных кошельков' },
       sources: [
-        {type: 'image/avif', src: sdkAvif},
-        {type: 'image/webp', src: sdkWebp},
-      ]
-     
-    }
+        { type: 'image/avif', src: sdkAvif },
+        { type: 'image/webp', src: sdkWebp },
+      ],
+    },
   },
   {
     id: 7,
@@ -108,11 +104,14 @@ export const productsList: ISliderCard[] = [
     cardDesc: 'Evervault помогает бизнесам безопасно хранить и использовать секретные данные.',
     extraInfo: '',
     images: {
-      default: {src: evervaultPng, alt: 'Evercode lab: разработка решений для работы с&nbsp;конфиденциальными данными'},
+      default: {
+        src: evervaultPng,
+        alt: 'Evercode lab: разработка решений для работы с&nbsp;конфиденциальными данными',
+      },
       sources: [
-        {type: 'image/avif', src: evervaultAvif},
-        {type: 'image/webp', src: evervaultWebp},
-      ]
-    }
-  }
-]
+        { type: 'image/avif', src: evervaultAvif },
+        { type: 'image/webp', src: evervaultWebp },
+      ],
+    },
+  },
+];

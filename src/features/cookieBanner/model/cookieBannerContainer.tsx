@@ -1,28 +1,28 @@
-import { useState } from "react";
-import CookieBanner from "../ui/cookieBanner";
+import { useState } from 'react';
+import CookieBanner from '../ui/cookieBanner';
 
-const CookieBannerContainer =()=> {
+const CookieBannerContainer = () => {
   const [cookie, setCookie] = useState(checkCookieInLS);
-  
-  function checkCookieInLS(){
+
+  function checkCookieInLS() {
     return localStorage.getItem('accepted_cookies') === 'yes';
-  };
-  function setCookieToLS(){
+  }
+  function setCookieToLS() {
     localStorage.setItem('accepted_cookies', 'yes');
-  };
-  function setCookieAccepted(){
+  }
+  function setCookieAccepted() {
     setCookieToLS();
     setCookie(true);
-  };
+  }
   return (
     <>
       {!cookie && (
         <div>
-          <CookieBanner acceptCookie={setCookieAccepted}/>
+          <CookieBanner acceptCookie={setCookieAccepted} />
         </div>
       )}
     </>
-  )
+  );
 };
 
 export default CookieBannerContainer;

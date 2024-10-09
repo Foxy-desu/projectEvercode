@@ -8,20 +8,20 @@ import Loader from '../../shared/loader/loader.tsx';
 import HeaderContainer from '../../widgets/header/model/headerContainer.tsx';
 import cl from './root.module.scss';
 
-const RootElement =()=> {
+const RootElement = () => {
   const viewportWidthData = useViewportWidth();
-  const {state} = useNavigation();
+  const { state } = useNavigation();
   return (
     <WidthContext.Provider value={viewportWidthData}>
-      <HeaderContainer navMenuLinks={navMenuLinks}/>
+      <HeaderContainer navMenuLinks={navMenuLinks} />
       <main className={cl.main}>
-        {state === 'loading' && <Loader/>}  
-        <Outlet/>
+        {state === 'loading' && <Loader />}
+        <Outlet />
       </main>
-      <Footer navMenuLinks={navMenuLinks}/>
-      <CookieBannerContainer/>
+      <Footer navMenuLinks={navMenuLinks} />
+      <CookieBannerContainer />
     </WidthContext.Provider>
-  )
+  );
 };
 
 export default RootElement;

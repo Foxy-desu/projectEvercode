@@ -1,9 +1,5 @@
-const ProductsPage =()=>{
-  return (
-    <div>
-      Продукты
-    </div>
-  )
+const ProductsPage = () => {
+  return <div>Продукты</div>;
 };
 
 export default ProductsPage;

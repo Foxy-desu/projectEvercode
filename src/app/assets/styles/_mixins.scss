@@ -1,4 +1,3 @@
-
 @mixin limited() {
   //for header and content
   padding: 0 60px;
@@ -10,11 +9,11 @@
   // }
 
   @media (max-width: 1130px) {
-    padding: 0 calc(10vw/1.5);
+    padding: 0 calc(10vw / 1.5);
   }
 }
 
-@mixin limitedWidth($maxWidth:1600px, $padding){
+@mixin limitedWidth($maxWidth: 1600px, $padding) {
   width: 100%;
   max-width: $maxWidth;
   padding: $padding;
@@ -30,7 +29,9 @@
   $addSize: $pcFontSize - $mobileFontSize;
   $addMobileSize: $addSize + $addSize * 0.7;
   @media screen and (max-width: 1300px) {
-      font-size: calc(#{$mobileFontSize + px} + #{$addMobileSize} * ((100vw - #{$minLayoutWidth + px}) / #{$maxLayoutWidth}));
+    font-size: calc(
+      #{$mobileFontSize + px} + #{$addMobileSize} * ((100vw - #{$minLayoutWidth + px}) / #{$maxLayoutWidth})
+    );
   }
 
   // @media (min-width: 767px) {

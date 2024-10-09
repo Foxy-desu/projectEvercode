@@ -1,33 +1,33 @@
 %montserrat-600 {
-  font-family: "Montserrat", arial, sans-serif;
+  font-family: 'Montserrat', arial, sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
 }
 
 %montserrat-500 {
-  font-family: "Montserrat", arial, sans-serif;
+  font-family: 'Montserrat', arial, sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
 }
 
 %montserrat-400 {
-  font-family: "Montserrat", arial, sans-serif;
+  font-family: 'Montserrat', arial, sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
 }
 
 %inter-600 {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
 }
 
 %inter-400 {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -40,9 +40,8 @@
   max-width: 1600px;
 
   @media (max-width: 900px) {
-    padding: 0 calc(5vw/1.5);
+    padding: 0 calc(5vw / 1.5);
   }
-
 }
 
 %centered {

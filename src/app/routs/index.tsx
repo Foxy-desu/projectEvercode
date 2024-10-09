@@ -1,59 +1,55 @@
-import { createHashRouter } from "react-router-dom";
-import RootElement from "./root";
-import Page404 from "../../pages/404/404";
+import { createHashRouter } from 'react-router-dom';
+import RootElement from './root';
+import Page404 from '../../pages/404/404';
 
 export const router = createHashRouter([
   {
     path: '/',
     element: <RootElement />,
-    errorElement: <Page404/>,
+    errorElement: <Page404 />,
     children: [
       {
-        path: "/",
+        path: '/',
         async lazy() {
-          let Main = await import("../../pages/main/model/mainPageContainer");
-          return { Component: Main.default,  };
+          const Main = await import('../../pages/main/model/mainPageContainer');
+          return { Component: Main.default };
         },
-        
       },
-      { 
-        path: "products",
+      {
+        path: 'products',
         async lazy() {
-          let Products = await import("../../pages/products/products");
+          const Products = await import('../../pages/products/products');
           return { Component: Products.default };
         },
       },
-      { 
-        path: "cases",
+      {
+        path: 'cases',
         async lazy() {
-          let Cases = await import("../../pages/cases/cases");
+          const Cases = await import('../../pages/cases/cases');
           return { Component: Cases.default };
         },
       },
-      { 
-        path: "carreer",
+      {
+        path: 'carreer',
         async lazy() {
-          let Carreer = await import("../../pages/carreer/carreer");
+          const Carreer = await import('../../pages/carreer/carreer');
           return { Component: Carreer.default };
         },
       },
-      { 
-        path: "contacts",
+      {
+        path: 'contacts',
         async lazy() {
-          let Contacts = await import("../../pages/contacts/contacts");
+          const Contacts = await import('../../pages/contacts/contacts');
           return { Component: Contacts.default };
         },
-        
       },
       {
         path: 'blog',
         async lazy() {
-          let Blog = await import("../../pages/blog/blog");
+          const Blog = await import('../../pages/blog/blog');
           return { Component: Blog.default };
         },
-        
-      }
-    ]
-  }
+      },
+    ],
+  },
 ]);
-

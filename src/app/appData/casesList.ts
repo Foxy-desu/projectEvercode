@@ -18,14 +18,14 @@ export interface ISliderCardImages {
   default: {
     src: string;
     alt: string;
-  },
+  };
   sources?: {
-    type: string,
+    type: string;
     src: string;
-  }[]
-};
+  }[];
+}
 
-interface ISliderCard{
+interface ISliderCard {
   id: number;
   pageLink: string;
   cardTitle: string;
@@ -38,16 +38,16 @@ export const casesList: ISliderCard[] = [
     id: 1,
     pageLink: 'cases/ondoc',
     cardTitle: 'Медицина',
-    cardDesc: 'Создаем IT-решения в&nbsp;области медицины, которые повышают эффективность взаимодействия с&nbsp;клиентами.',
+    cardDesc:
+      'Создаем IT-решения в&nbsp;области медицины, которые повышают эффективность взаимодействия с&nbsp;клиентами.',
     extraInfo: '',
     images: {
-      default: {src:medicinePng, alt: 'Evercode lab: IT-решения в области медицины'},
+      default: { src: medicinePng, alt: 'Evercode lab: IT-решения в области медицины' },
       sources: [
-        {type: 'image/avif', src: medicineAvif},
-        {type: 'image/webp', src: medicineWebp},
-      ]
-      
-    }
+        { type: 'image/avif', src: medicineAvif },
+        { type: 'image/webp', src: medicineWebp },
+      ],
+    },
   },
   {
     id: 2,
@@ -56,27 +56,27 @@ export const casesList: ISliderCard[] = [
     cardDesc: 'Разрабатываем приложения для образования с&nbsp;целью повышения качества учебного процесса.',
     extraInfo: '',
     images: {
-      default: {src: educationPng, alt: 'Evercode lab: IT-решения в области образования'},
+      default: { src: educationPng, alt: 'Evercode lab: IT-решения в области образования' },
       sources: [
-        {type: 'image/avif', src: educationAvif},
-        {type: 'image/webp', src: educationWebp},
-      ]
-    }
-
+        { type: 'image/avif', src: educationAvif },
+        { type: 'image/webp', src: educationWebp },
+      ],
+    },
   },
   {
     id: 3,
     pageLink: 'cases/cadfem-version-2',
     cardTitle: 'CRM системы',
-    cardDesc: 'Разрабатываем и&nbsp;интегрируем системы автоматизации бизнес-процессов, обеспечивая взаимодействие с&nbsp;внешними и&nbsp;внутренними сервисами компании.',
+    cardDesc:
+      'Разрабатываем и&nbsp;интегрируем системы автоматизации бизнес-процессов, обеспечивая взаимодействие с&nbsp;внешними и&nbsp;внутренними сервисами компании.',
     extraInfo: '',
     images: {
-      default: {src: crmPng, alt: 'Evercode lab: IT-решения для автоматизации бизнес-процессов'},
+      default: { src: crmPng, alt: 'Evercode lab: IT-решения для автоматизации бизнес-процессов' },
       sources: [
-        {type: 'image/avif', src: crmAvif},
-        {type: 'image/webp', src: crmWebp},
-      ]
-    }
+        { type: 'image/avif', src: crmAvif },
+        { type: 'image/webp', src: crmWebp },
+      ],
+    },
   },
   {
     id: 4,
@@ -85,12 +85,12 @@ export const casesList: ISliderCard[] = [
     cardDesc: 'Проектируем и&nbsp;разрабатываем приложения для электронной коммерции.',
     extraInfo: '',
     images: {
-      default: {src: commercePng, alt: 'Evercode lab: IT-решения для электронной коммерции'},
+      default: { src: commercePng, alt: 'Evercode lab: IT-решения для электронной коммерции' },
       sources: [
-        {type: 'image/avif', src: commerceAvif},
-        {type: 'image/webp', src: commerceWebp},
-      ]
-    }
+        { type: 'image/avif', src: commerceAvif },
+        { type: 'image/webp', src: commerceWebp },
+      ],
+    },
   },
   {
     id: 5,
@@ -99,11 +99,11 @@ export const casesList: ISliderCard[] = [
     cardDesc: 'Разрабатываем системы сбора, обработки и&nbsp;визуализации данных с&nbsp;устройств мониторинга.',
     extraInfo: '',
     images: {
-      default: {src:monitorPng, alt: 'Evercode lab: IT-решения для мониторинга данных'},
+      default: { src: monitorPng, alt: 'Evercode lab: IT-решения для мониторинга данных' },
       sources: [
-        {type: 'image/avif', src: monitorAvif},
-        {type: 'image/webp', src: monitorWebp},
-      ]
-    }
+        { type: 'image/avif', src: monitorAvif },
+        { type: 'image/webp', src: monitorWebp },
+      ],
+    },
   },
-]
+];

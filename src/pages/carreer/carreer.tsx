@@ -1,10 +1,5 @@
-
-const CarreerPage =()=>{
-  return (
-    <div>
-      Карьера
-    </div>
-  )
+const CarreerPage = () => {
+  return <div>Карьера</div>;
 };
 
 export default CarreerPage;

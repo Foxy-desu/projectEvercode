@@ -1,5 +1,5 @@
-@import "../../../../app/assets/styles/mixins";
-@import "../../../../app/assets/styles/placeholders";
+@import '../../../../app/assets/styles/mixins';
+@import '../../../../app/assets/styles/placeholders';
 @import '../../../../app/assets/styles/variables';
 
 .heroSection {
@@ -12,22 +12,22 @@
   display: grid;
   grid-template-columns: 493px 2fr;
   grid-template-rows: repeat(5, 1fr);
-  grid-template-areas: 
-  "title image "
-  "title image "
-  "title image "
-  "btn image "
-  ". image ";
+  grid-template-areas:
+    'title image '
+    'title image '
+    'title image '
+    'btn image '
+    '. image ';
   justify-content: space-between;
   column-gap: 2rem;
   max-height: 500px;
-  transition: padding .2s ease-in;
+  transition: padding 0.2s ease-in;
 
   @media (max-width: 1530px) {
     padding: 0 120px;
-    column-gap: 0
+    column-gap: 0;
   }
-  
+
   @media (max-width: 1400px) {
     grid-template-columns: 35vw 2fr;
   }
@@ -36,15 +36,14 @@
     max-height: max-content;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr auto 1fr;
-    grid-template-areas: 
-      "title"
-      "image"
-      "btn";
+    grid-template-areas:
+      'title'
+      'image'
+      'btn';
     justify-content: center;
     justify-items: center;
     align-items: center;
   }
-  
 }
 
 .title {
@@ -81,7 +80,7 @@
     line-height: 2.5rem;
   }
 
-  @media (max-width: 520px){
+  @media (max-width: 520px) {
     font-size: clamp(1.5rem, 7.2vw, 2rem);
     line-height: clamp(2rem, 7.7vw, 2.5rem);
     margin: 7vw 0;
@@ -92,17 +91,17 @@
   grid-area: btn;
   align-self: start;
   margin-top: 2rem;
-  transition: margin .0s ease-in;
+  transition: margin 0s ease-in;
 
-  @media(max-width: 1200px){
+  @media (max-width: 1200px) {
     margin-top: 5vw;
   }
 }
 
-.imageWrap{
+.imageWrap {
   grid-area: image;
   justify-self: end;
-  transition: .2s linear;
+  transition: 0.2s linear;
 
   @media (max-width: 1200px) {
     justify-self: center;
@@ -118,11 +117,6 @@
   }
 
   @media (max-width: 520px) {
-    width: 80vw
+    width: 80vw;
   }
 }
-
-
-
-
-

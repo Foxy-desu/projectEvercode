@@ -1,6 +1,6 @@
-@import "../../../app/assets/styles/mixins";
-@import "../../../app/assets/styles/variables";
-@import "../../../app/assets/styles/placeholders";
+@import '../../../app/assets/styles/mixins';
+@import '../../../app/assets/styles/variables';
+@import '../../../app/assets/styles/placeholders';
 
 //TODO: adjust highlite blocks for vports with different scroll bar sizes
 .contentWrap {
@@ -9,14 +9,17 @@
   position: relative;
   min-height: 100dvh;
   background-color: $clr-background-dk;
-  background-image: url('../../../app/assets/img/decorative/tile-right.png'), url('../../../app/assets/img/decorative/tile-left.png');
-  background-position: right top, left top;
+  background-image: url('../../../app/assets/img/decorative/tile-right.png'),
+    url('../../../app/assets/img/decorative/tile-left.png');
+  background-position:
+    right top,
+    left top;
   background-repeat: no-repeat;
   background-size: 250px;
 
   @media (max-width: 705px) {
-  background-image: url('../../../app/assets/img/png/tile-left.png');
-  background-position: left top;
+    background-image: url('../../../app/assets/img/decorative/tile-left.png');
+    background-position: left top;
   }
 }
 
@@ -26,24 +29,22 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
-
 }
 
-.listItem{
+.listItem {
   flex-basis: 215px;
   height: 180px;
-  border: 1px solid rgba(255, 255, 255, .06);
-  
-  &:nth-child(2n + 1) {
-    background-color: rgba(255, 255, 255, .06);
-    border: 1px solid rgba(255, 255, 255, 0);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 
+  &:nth-child(2n + 1) {
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0);
   }
   //1025-1249
   &_reduced {
     &:nth-child(n) {
       background-color: transparent;
-      border: 1px solid rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, 0.06);
     }
 
     &:nth-child(1),
@@ -51,18 +52,16 @@
     &:nth-child(5),
     &:nth-child(8),
     &:nth-child(n + 9) {
-      background-color: rgba(255, 255, 255, .06);
+      background-color: rgba(255, 255, 255, 0.06);
       border: 1px solid rgba(255, 255, 255, 0);
-  
     }
   }
 
   // 488-728
   &_reducedMin {
-    
     &:nth-child(n) {
       background-color: transparent;
-      border: 1px solid rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, 0.06);
     }
 
     &:nth-child(1),
@@ -70,14 +69,13 @@
     &:nth-child(5),
     &:nth-child(8),
     &:nth-child(9) {
-      background-color: rgba(255, 255, 255, .06);
+      background-color: rgba(255, 255, 255, 0.06);
       border: 1px solid rgba(255, 255, 255, 0);
-  
     }
   }
 }
 
-.reduced:nth-child(n+5) {
+.reduced:nth-child(n + 5) {
   display: none;
 }
 
@@ -97,12 +95,11 @@
   background-repeat: no-repeat;
   background-size: 500px;
 
-  
   @media (max-width: 1400px) {
     background-image: none;
     padding: 8rem 8rem 3rem;
   }
-  
+
   @media (max-width: 1200px) {
     background-image: none;
     padding: 5rem 5rem 3rem;

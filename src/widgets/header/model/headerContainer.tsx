@@ -1,33 +1,35 @@
-import { useContext, useEffect, useState } from "react";
-import { INavProps } from "../../../shared/navigationMenu/navigationMenu";
-import { WidthContext } from "../../../app/context/widthContext";
-import { blockScroll } from "../../../shared/utils/helpers";
-import Header from "../header";
+import { useContext, useEffect, useState } from 'react';
+import { INavProps } from '../../../shared/navigationMenu/navigationMenu';
+import { WidthContext } from '../../../app/context/widthContext';
+import { blockScroll } from '../../../shared/utils/helpers';
+import Header from '../header';
 
-const HeaderContainer =({navMenuLinks}:{navMenuLinks:INavProps['links']})=> {
+const HeaderContainer = ({ navMenuLinks }: { navMenuLinks: INavProps['links'] }) => {
   const [isBurgerOpen, setIsBurgerOpen] = useState(false);
   const viewportWidth = useContext(WidthContext);
-  
-  function toggleBurger(){
+
+  function toggleBurger() {
     setIsBurgerOpen(!isBurgerOpen);
-  };
-  
-  function closeBurger(){
+  }
+
+  function closeBurger() {
     setIsBurgerOpen(false);
-  };
+  }
 
-  useEffect(()=>{
+  useEffect(() => {
     //block scroll only if the burger is opened and the viewport has certain width
-    const isOpen = isBurgerOpen && (viewportWidth.width <= 1000);
+    const isOpen = isBurgerOpen && viewportWidth.width <= 1000;
     blockScroll(isOpen);
-  }, [isBurgerOpen, viewportWidth])
+  }, [isBurgerOpen, viewportWidth]);
 
-  return <Header
-    navMenuLinks={navMenuLinks}
-    isBurgerOpen={isBurgerOpen}
-    closeBurger={closeBurger}
-    toggleBurger={toggleBurger}
-  />
+  return (
+    <Header
+      navMenuLinks={navMenuLinks}
+      isBurgerOpen={isBurgerOpen}
+      closeBurger={closeBurger}
+      toggleBurger={toggleBurger}
+    />
+  );
 };
 
 export default HeaderContainer;

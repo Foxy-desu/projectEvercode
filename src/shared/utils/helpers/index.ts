@@ -1,32 +1,32 @@
 import parse from 'html-react-parser';
 
-export function breakLine(string:string){
+export function breakLine(string: string) {
   const splitStr = string.split(' ');
   const unParsed: Array<string> = [];
-  if(splitStr.length >2 || (splitStr.every((el)=> el.length > 3) && splitStr.length === 2)){
-    splitStr.forEach((el, index, arr)=> {
-      if(index === arr.length-1){
+  if (splitStr.length > 2 || (splitStr.every((el) => el.length > 3) && splitStr.length === 2)) {
+    splitStr.forEach((el, index, arr) => {
+      if (index === arr.length - 1) {
         unParsed.push('<br/>');
       }
-      unParsed.push(el)
-    })
+      unParsed.push(el);
+    });
   } else {
     return string;
   }
-  
+
   return parse(unParsed.join(' '));
-};
+}
 
-export function parseHTML(string:string){
+export function parseHTML(string: string) {
   return parse(string);
-};
+}
 
-export  function blockScroll(isBurgerOpen:boolean){
-  if(isBurgerOpen){
-    document.documentElement.style.position="fixed"
-    document.documentElement.style.width="100%";
+export function blockScroll(isBurgerOpen: boolean) {
+  if (isBurgerOpen) {
+    document.documentElement.style.position = 'fixed';
+    document.documentElement.style.width = '100%';
   } else {
-    document.documentElement.style.position="relative";
-    document.documentElement.style.width="auto";
+    document.documentElement.style.position = 'relative';
+    document.documentElement.style.width = 'auto';
   }
-};
+}

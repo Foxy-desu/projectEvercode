@@ -1,5 +1,5 @@
-@import "../../../app/assets/styles/variables";
-@import "../../../app/assets/styles/placeholders";
+@import '../../../app/assets/styles/variables';
+@import '../../../app/assets/styles/placeholders';
 
 .card {
   display: block;
@@ -42,7 +42,7 @@
   font-size: 1.25rem;
   text-align: center;
   color: $clr-primary;
-  margin-bottom: 1rem
+  margin-bottom: 1rem;
 }
 
 .desc {
@@ -51,7 +51,7 @@
   font-size: 1rem;
   color: $clr-text-dk;
   text-align: center;
-  margin-bottom: 0.8rem
+  margin-bottom: 0.8rem;
 }
 
 .extra {

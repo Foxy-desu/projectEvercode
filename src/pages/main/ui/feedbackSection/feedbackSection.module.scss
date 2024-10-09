@@ -87,7 +87,6 @@
   @extend %inter-400;
   font-style: normal;
   color: $clr-text-dk;
-  
 }
 
 .feedbackCard {
@@ -97,27 +96,27 @@
   @media (max-width: 767px) {
     flex-direction: column-reverse;
   }
-  @media (min-width: 1200px){
-    flex-direction:row;
+  @media (min-width: 1200px) {
+    flex-direction: row;
   }
 }
 
 .details {
   display: flex;
-  border-top: 1px solid  #c4cde1;
-  border-bottom: 1px solid  #c4cde1;
+  border-top: 1px solid #c4cde1;
+  border-bottom: 1px solid #c4cde1;
   margin-bottom: 2.5rem;
 
   @media (max-width: 470px) {
     flex-direction: column;
   }
-  
+
   @media (max-width: 767px) {
     align-items: stretch;
     width: 100%;
   }
 
-  @media (min-width: 1200px){
+  @media (min-width: 1200px) {
     display: block;
     border-bottom: none;
   }
@@ -135,9 +134,9 @@
   justify-content: flex-start;
   width: 33%;
 
-  &:nth-child(2){
-    border-left: 1px solid  #c4cde1;
-    border-right: 1px solid  #c4cde1;
+  &:nth-child(2) {
+    border-left: 1px solid #c4cde1;
+    border-right: 1px solid #c4cde1;
   }
 
   @media (max-width: 470px) {
@@ -146,34 +145,33 @@
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
-    &:nth-child(2){
+    &:nth-child(2) {
       border: none;
     }
-    &:not(:last-child){
-      border-bottom: 1px solid  #c4cde1;
+    &:not(:last-child) {
+      border-bottom: 1px solid #c4cde1;
     }
-
   }
 
-  @media (max-width: 767px){
+  @media (max-width: 767px) {
     // height: 100%;
     // flex-grow: 1;
   }
-  
-  @media (min-width: 1200px){
+
+  @media (min-width: 1200px) {
     width: auto;
     align-items: flex-start;
-    &:nth-child(2){
+    &:nth-child(2) {
       border: none;
-      border-bottom: 1px solid  #c4cde1;
+      border-bottom: 1px solid #c4cde1;
     }
-    border-bottom: 1px solid  #c4cde1;
+    border-bottom: 1px solid #c4cde1;
   }
 }
 
 .mainContent {
-  @media (min-width: 1200px){
-    width: 65%
+  @media (min-width: 1200px) {
+    width: 65%;
   }
 }
 
@@ -182,10 +180,8 @@
   font-size: 1rem;
 }
 
-
-
 .detailsTitle {
-  font-size: .875rem;
+  font-size: 0.875rem;
   color: $clr-primary;
   font-weight: 600;
   margin-bottom: 0.625rem;
@@ -202,14 +198,12 @@
 .detailsDesc {
   @extend %noPadMarg;
   text-align: center;
-  font-size: .875rem;
+  font-size: 0.875rem;
   flex-shrink: 2;
 
   @media (max-width: 470px) {
     text-align: end;
   }
-
-  
 }
 
 .author {

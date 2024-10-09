@@ -19,20 +19,20 @@
       background-color: $clr-text-lt;
     }
 
-    & .line:nth-child(2){
+    & .line:nth-child(2) {
       transform: translateY(50%) rotate(45deg);
     }
 
-    & .line:nth-child(3){
+    & .line:nth-child(3) {
       display: none;
     }
 
-    & .line:nth-child(4){
+    & .line:nth-child(4) {
       transform: translateY(-50%) rotate(-45deg);
     }
   }
 
-  &_closed{
+  &_closed {
     justify-content: space-between;
   }
 }
@@ -51,4 +51,3 @@
     background-color: $clr-text-lt;
   }
 }
-

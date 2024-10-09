@@ -16,24 +16,21 @@ export interface IHeroImgsDef {
   alt: string;
 }
 export interface IHeroImgsSrcs {
-  type: string,
+  type: string;
   srcset: IHeroImgsSrcSet[];
 }
 export interface IHeroImgs {
-  default: IHeroImgsDef,
-  sources?: IHeroImgsSrcs[]
+  default: IHeroImgsDef;
+  sources?: IHeroImgsSrcs[];
 }
-export const heroImages:IHeroImgs = {
+export const heroImages: IHeroImgs = {
   default: {
     src: heroLgPng,
     srcSet: [
-      {url: heroSmPng, width: 395},
-      {url: heroLgPng, width: 788},
+      { url: heroSmPng, width: 395 },
+      { url: heroLgPng, width: 788 },
     ],
-    sizes: [
-      '(max-width: 500px) 395px',
-      '788px',
-    ],
+    sizes: ['(max-width: 500px) 395px', '788px'],
     alt: '',
   },
 
@@ -41,16 +38,16 @@ export const heroImages:IHeroImgs = {
     {
       type: 'image/avif',
       srcset: [
-        {url: heroSmAvif, width: 395},
-        {url: heroLgAvif, width: 788},
-      ]
+        { url: heroSmAvif, width: 395 },
+        { url: heroLgAvif, width: 788 },
+      ],
     },
     {
       type: 'image/webp',
       srcset: [
-        {url: heroSmWebp, width: 395},
-        {url: heroLgWebp, width: 788},
-      ]
-    }
-  ]
+        { url: heroSmWebp, width: 395 },
+        { url: heroLgWebp, width: 788 },
+      ],
+    },
+  ],
 };
