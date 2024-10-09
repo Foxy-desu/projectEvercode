@@ -1,4 +1,4 @@
-import { HTMLAttributes, forwardRef } from 'react';
+import { HTMLAttributes} from 'react';
 import { parseHTML } from '../utils/helpers';
 import cl from './section.module.scss';
 
