@@ -3,7 +3,7 @@ import cl from './sliderCard.module.scss';
 import { parseHTML } from '../../utils/helpers';
 import { ISliderCardImages } from '../../../app/appData/casesList';
 
-export interface ISliderCardProps {
+export interface ISliderCard {
   id:number;
   pageLink: string;
   cardTitle: string;
@@ -12,7 +12,7 @@ export interface ISliderCardProps {
   images?: ISliderCardImages
 }
 
-const SliderCard =({pageLink,images, cardTitle, cardDesc,extraInfo}:ISliderCardProps)=> {
+const SliderCard =({pageLink,images, cardTitle, cardDesc,extraInfo}:ISliderCard)=> {
   return (
     <Link className={cl.card} to={pageLink}>
         {images
