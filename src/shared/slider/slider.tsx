@@ -5,19 +5,20 @@ import 'swiper/css/pagination';
 import RoundBtn from "../roundBtn/roundBtn";
 import SliderCard, { ISliderCard } from "../sliderCard/mySlideCard/sliderCard.tsx";
 import cl from './slider.module.scss'; 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 interface ISlider {
   items: Array<ISliderCard>
 }
 
 const Slider = ({items}:ISlider)=>{
+  const [disableFading, setDisableFading] = useState<'isBeginning'|'isEnd'|null>('isBeginning');
   const navNextRef = useRef(null);
   const navPrevRef = useRef(null);
   return (
     <div className={cl.slider} style={{display: 'flex', width: '100%', justifyContent: 'center'}}>
       <div className={cl.navigation} ref={navPrevRef}>
-        <RoundBtn  prompt="" onClick={(e)=>e.preventDefault}/>
+        <RoundBtn  prompt="" onClick={(e)=>e.preventDefault} style={disableFading==='isBeginning' ? {background:'gray', cursor: 'default'}:{}}/>
       </div>
       <div className={cl.slideContainer}>
         <Swiper
@@ -25,10 +26,23 @@ const Slider = ({items}:ISlider)=>{
       modules={[Navigation, Pagination, A11y]}
       navigation={{
         nextEl: navNextRef.current,
-        prevEl: navPrevRef.current
+        prevEl: navPrevRef.current,
       }}
       pagination={{clickable:false}}
-      loop={true}
+      loop={false}
+      keyboard={true}
+      a11y={{
+        scrollOnFocus:true
+      }}
+      onActiveIndexChange={(e) => {
+        if(e.isBeginning){
+          setDisableFading("isBeginning");
+        } else if(e.isEnd){
+          setDisableFading("isEnd");
+        } else {
+          setDisableFading(null)
+        }
+       }}
       breakpoints={{
         320: {
           slidesPerView: 1,
@@ -63,7 +77,7 @@ const Slider = ({items}:ISlider)=>{
         </Swiper>
       </div>
       <div className={cl.navigation} style={{transform: 'rotate(180deg)'}} ref={navNextRef}>
-        <RoundBtn  prompt=""/>
+        <RoundBtn  prompt="" style={disableFading==='isEnd' ? {background:'gray', cursor: 'default'}:{}}/>
       </div >
     </div>
   )
