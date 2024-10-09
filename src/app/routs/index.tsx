@@ -11,7 +11,7 @@ export const router = createHashRouter([
       {
         path: "/",
         async lazy() {
-          let Main = await import("../../pages/main/ui/mainPage");
+          let Main = await import("../../pages/main/model/mainPageContainer");
           return { Component: Main.default,  };
         },
         
