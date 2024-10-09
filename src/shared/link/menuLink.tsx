@@ -66,7 +66,7 @@ const IconLink =({to, text, location}:ILinkProps)=> {
   const defaultClass = location === "header" ? cl.link : cl.link_simplified;
   const activeClass = (isActive:boolean) => isActive ? cl.active : "";
   return (
-    <div>
+    <div style={{width: '100%'}}>
       <NavLink className={({isActive})=>`${defaultClass} ${activeClass(isActive)} ${cl.iconLink}`} to={to}>{text}</NavLink>
     </div>
   )
@@ -75,7 +75,7 @@ const PlainLink =({to, text, location}:ILinkProps)=> {
   const defaultClass = location === "header" ? cl.link : cl.link_simplified;
   const activeClass = (isActive:boolean) => isActive ? cl.active : "";
   return (
-    <div>
+    <div style={{width: '100%'}}>
       <NavLink className={({isActive})=>`${defaultClass} ${activeClass(isActive)}`} to={to}>{text}</NavLink>
     </div>
   )
