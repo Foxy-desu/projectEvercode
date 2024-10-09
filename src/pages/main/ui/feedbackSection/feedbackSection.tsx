@@ -14,7 +14,7 @@ const FeedbackSection =({feedbackCards}:{feedbackCards:IFeedbackCard[]})=>{
   const navNextRef = useRef(null);
   const paginationRef = useRef(null);
   return (
-    <Section>
+    <Section className={cl.feedbackSection}>
       <header className={cl.header}>
         <h2 className={cl.feedbacksTitle}>Отзывы</h2>
         <div className={cl.decor}></div>
