@@ -17,8 +17,9 @@ const Slider = ({ items }: ISlider) => {
   const navPrevRef = useRef(null);
   return (
     <div className={cl.slider} style={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
-      <div className={cl.navigation} ref={navPrevRef}>
+      <div className={cl.navigation}>
         <RoundBtn
+          ref={navPrevRef}
           prompt=""
           onClick={(e) => e.preventDefault}
           style={disableFading === 'isBeginning' ? { background: 'gray', cursor: 'default' } : {}}
@@ -79,8 +80,8 @@ const Slider = ({ items }: ISlider) => {
           })}
         </Swiper>
       </div>
-      <div className={cl.navigation} style={{ transform: 'rotate(180deg)' }} ref={navNextRef}>
-        <RoundBtn prompt="" style={disableFading === 'isEnd' ? { background: 'gray', cursor: 'default' } : {}} />
+      <div className={cl.navigation} style={{ transform: 'rotate(180deg)' }} >
+        <RoundBtn ref={navNextRef} prompt="" style={disableFading === 'isEnd' ? { background: 'gray', cursor: 'default' } : {}} />
       </div>
     </div>
   );
