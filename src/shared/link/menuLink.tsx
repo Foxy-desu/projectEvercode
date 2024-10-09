@@ -1,8 +1,9 @@
 import { NavLink } from 'react-router-dom';
-import cl from './menuLink.module.scss';
 import { breakLine } from '../utils/helpers';
+import cl from './menuLink.module.scss';
 
-export interface IMenuLinkProps {
+
+export interface IMenuLink {
   type: "dropdown" | "icon" | "simple";
   linkPath: string;
   LinkTextContent: string;
@@ -12,13 +13,13 @@ export interface IMenuLinkProps {
 interface ILinkProps {
   to: string;
   text: string;
-  location?: IMenuLinkProps['location'];
+  location?: IMenuLink['location'];
 };
 interface IDLinkProps extends ILinkProps {
   innerLinks: Array<{to: string, text: string}>;
 };
 
-const MenuLink = ({type, linkPath, LinkTextContent, innerLinks, location="header"}:IMenuLinkProps)=> {
+const MenuLink = ({type, linkPath, LinkTextContent, innerLinks, location="header"}:IMenuLink)=> {
   if(type === "dropdown" && innerLinks && location === "header"){
     return <DropdownLink to={linkPath} text={LinkTextContent} innerLinks={innerLinks}/>
   }
