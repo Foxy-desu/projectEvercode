@@ -1,4 +1,4 @@
-import { SetStateAction, useMemo, useRef } from 'react';
+import { SetStateAction, useEffect, useMemo, useRef, useState } from 'react';
 import { TRef } from '../../../shared/section/section';
 import { TAppList, TAppListItem, appList} from '../../../app/appData/appList';
 import { IFeedbackCard } from '../../../app/appData/feedbackList';
@@ -89,10 +89,10 @@ interface IAppsList {
 }
 const AppsList =({appList, isMinimized, resetThresholdReached, stopReconcilation, viewportWidth}:IAppsList)=> {
   const mediaStyle = useMemo(()=>{
-    const brPoint1Max = 1249 - viewportWidth.diff;
-    const brPoint1Min = 1025 - viewportWidth.diff;
-    const brPoint2Max = 728 - viewportWidth.diff;
-    const brPoint2Min = 488 - viewportWidth.diff;
+    const brPoint1Max = 1234;
+    const brPoint1Min = 1010;
+    const brPoint2Max = 712;
+    const brPoint2Min = 472;
     
     if(viewportWidth.width >= brPoint1Min && viewportWidth.width <= brPoint1Max){
       return `${cl.listItem_reduced}`
@@ -101,7 +101,7 @@ const AppsList =({appList, isMinimized, resetThresholdReached, stopReconcilation
       return `${cl.listItem_reducedMin}`
     }
     return ''
-  }, [viewportWidth.width])
+  }, [viewportWidth.width]);
   
   return (
     <>
