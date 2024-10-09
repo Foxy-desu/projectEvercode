@@ -22,7 +22,11 @@ export function parseHTML(string:string){
 };
 
 export  function blockScroll(isBurgerOpen:boolean){
-  isBurgerOpen
-  ? document.documentElement.style.position="fixed"
-  : document.documentElement.style.position="initial";
+  if(isBurgerOpen){
+    document.documentElement.style.position="fixed"
+    document.documentElement.style.width="100%";
+  } else {
+    document.documentElement.style.position="relative";
+    document.documentElement.style.width="auto";
+  }
 };
