@@ -1,7 +1,7 @@
 
 @mixin limited() {
   //for header and content
-  padding: 0 150px;
+  padding: 0 60px;
   width: 100%;
   max-width: 1600px;
 
@@ -12,6 +12,12 @@
   @media (max-width: 1130px) {
     padding: 0 calc(10vw/1.5);
   }
+}
+
+@mixin limitedWidth($maxWidth:1600px, $padding){
+  width: 100%;
+  max-width: $maxWidth;
+  padding: $padding;
 }
 
 @mixin centered() {
