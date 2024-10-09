@@ -1,33 +1,44 @@
-import HeroSection  from './heroSection/heroSection';
-import cl from './mainPage.module.scss';
+import { SetStateAction, useEffect, useMemo, useRef } from 'react';
 import { TRef } from '../../../shared/section/section';
-import { useRef } from 'react';
+import { TAppList, TAppListItem, appList} from '../../../app/appData/appList';
+import { IFeedbackCard } from '../../../app/appData/feedbackList';
+import { IHeroImgs} from '../../../app/appData/heroSectionImages';
+import { ISliderCard } from '../../../shared/sliderCard/mySlideCard/sliderCard';
+import HeroSection  from './heroSection/heroSection';
 import Section from '../../../shared/section/section';
-import { appList } from '../../../app/appData/appList';
 import CardWithLogo from '../../../shared/cardWithLogo/cardWithLogo';
-import { useViewportWidth } from '../../../shared/utils/hooks/getViewportWidth';
-import { useStateOnThreshold } from '../../../shared/utils/hooks/useStateOnThreshold';
 import RoundBtn from '../../../shared/roundBtn/roundBtn';
 import Slider from '../../../shared/slider/slider';
-import { productsList } from '../../../app/appData/productsList';
-import { casesList } from '../../../app/appData/casesList';
-import { feedbackCards } from '../../../app/appData/feedbackList';
 import FeedbackSection from './feedbackSection/feedbackSection';
-import { heroImages } from '../../../app/appData/heroSectionImages';
- //TODO improve footer logo display 
- // TODO: fix viewportwidth getting (for different browsers viewports)
+import cl from './mainPage.module.scss';
  // TODO: improve styling for different viewportwidth
- // TODO: clean styles and code
+ // TODO: clean styles and code 
+ // todo: optimize page load
  //TODO: implement chsnge navlink for text if not active
  //TODO: implement animation for footer accordion 
  //
 
-const MainPage =()=>{
-  const threshold = 704;
-  const viewportWidth = useViewportWidth();
-  const {isThresholdReached:isMinimized, resetThresholdReached, stopReconcilation} = useStateOnThreshold({value:viewportWidth.width, compareOperator:'<', threshold});
+ interface IMainPage {
+  isMinimized: SetStateAction<boolean | void>;
+  viewportWidth: { width: number, diff: number};
+  resetThresholdReached: ()=>void;
+  stopReconcilation: ()=>void;
+  data: {
+    heroImages:IHeroImgs;
+    appList: TAppList;
+    productsList:ISliderCard[];
+    casesList: ISliderCard[];
+    feedbackCards: IFeedbackCard[];
+  }
+ }
+const MainPage =({
+  isMinimized,
+  resetThresholdReached,
+  stopReconcilation,
+  viewportWidth,
+  data
+}:IMainPage)=>{
   const scrollTarget = useRef<TRef>(null);
-  const diffVariableCss = {'--diff': viewportWidth.diff} as React.CSSProperties;
   function slideIntoView(){
     const scrollTargetNode = scrollTarget.current;
     if(scrollTargetNode) {
@@ -40,47 +51,83 @@ const MainPage =()=>{
   return (
     <>
       <HeroSection
-      sectionTitle='<span>Evercode Lab</span> Объединяем бизнес и&nbsp;технологии'
-      sectionImages={heroImages}
-      nextBtnHandler={slideIntoView}
+        sectionTitle='<span>Evercode Lab</span> Объединяем бизнес и&nbsp;технологии'
+        sectionImages={data.heroImages}
+        nextBtnHandler={slideIntoView}
       />
-      <div className={cl.contentWrap}>
+      <div className={cl.contentWrap} ref={scrollTarget}>
         <Section
           ref={scrollTarget}
           sectionTitle='<span>Разрабатываем микросервисы,</span> мобильные и&nbsp;веб-приложения для бизнеса и&nbsp;стартапов'>
-          <ul className={cl.appList}>
-            {appList.map((item) => {
-              const listItemStyle = `${cl.listItem} ${isMinimized? cl.reduced: ''}`
-              return (
-                <li className={listItemStyle} key={item.name} style={diffVariableCss}>
-                  <CardWithLogo logo={item.logo} title={item.name} link={item.url}/>
-                </li>
-              )
-            })}
-          </ul>
-          {isMinimized
-            ?(
-              <div className={cl.btnWrap}>
-                <RoundBtn purpose='expandControl' prompt='Раскрыть список' onClick={()=>{
-                  resetThresholdReached()
-                  stopReconcilation()}
-                } />
-              </div>
-            )
-          : ''}
+          <AppsList
+            appList={appList}
+            isMinimized={isMinimized}
+            resetThresholdReached={resetThresholdReached}
+            stopReconcilation={stopReconcilation}
+            viewportWidth={viewportWidth}/>
         </Section>
         <Section sectionTitle='Наши продукты'>
-          <Slider items={productsList}/>
+          <Slider items={data.productsList}/>
         </Section>
         <Section sectionTitle='Наша экспертиза'>
-          <Slider items={casesList}/>
+          <Slider items={data.casesList}/>
         </Section>
       </div>
       <div className={cl.feedbacksWrap}>
-          <FeedbackSection feedbackCards={feedbackCards}/>
+          <FeedbackSection feedbackCards={data.feedbackCards}/>
       </div>
     </>
   )
 };
+
+interface IAppsList {
+  appList: TAppList;
+  isMinimized: IMainPage['isMinimized'];
+  resetThresholdReached: IMainPage['resetThresholdReached'];
+  stopReconcilation: IMainPage['stopReconcilation'];
+  viewportWidth: IMainPage['viewportWidth'];
+
+}
+const AppsList =({appList, isMinimized, resetThresholdReached, stopReconcilation, viewportWidth}:IAppsList)=> {
+  const mediaStyle = useMemo(()=>{
+    const brPoint1Max = 1249 - viewportWidth.diff;
+    const brPoint1Min = 1025 - viewportWidth.diff;
+    const brPoint2Max = 728 - viewportWidth.diff;
+    const brPoint2Min = 488 - viewportWidth.diff;
+    
+    if(viewportWidth.width >= brPoint1Min && viewportWidth.width <= brPoint1Max){
+      return `${cl.listItem_reduced}`
+    }
+    if(viewportWidth.width <= brPoint2Max && viewportWidth.width >= brPoint2Min){
+      return `${cl.listItem_reducedMin}`
+    }
+    return ''
+  }, [viewportWidth.width])
+  
+  return (
+    <>
+      <ul className={cl.appList}>
+        {appList.map((item:TAppListItem) => {
+          const listItemStyle = `${cl.listItem} ${isMinimized? cl.reduced: ''} ${mediaStyle}`
+          return (
+            <li className={listItemStyle} key={item.name}>
+              <CardWithLogo logo={item.logo} title={item.name} link={item.url}/>
+            </li>
+          )
+      })}
+      </ul>
+      {isMinimized
+        ?(
+          <div className={cl.btnWrap}>
+            <RoundBtn purpose='expandControl' prompt='Раскрыть список' onClick={()=>{
+              resetThresholdReached()
+              stopReconcilation()}
+            } />
+          </div>
+        )
+      : ''}
+    </>
+  )
+}
 
 export default MainPage;

@@ -5,6 +5,7 @@
 //TODO: adjust highlite blocks for vports with different scroll bar sizes
 .contentWrap {
   @extend %centered;
+  padding-bottom: 6rem;
   position: relative;
   min-height: 100dvh;
   background-color: $clr-background-dk;
@@ -12,8 +13,6 @@
   background-position: right top, left top;
   background-repeat: no-repeat;
   background-size: 250px;
-  padding-top: clamp( 31px, 10vw, 160px);
-  padding-bottom: clamp(31px, 6.25vw, 100px);
 
   @media (max-width: 705px) {
   background-image: url('../../../app/assets/img/png/tile-left.png');
@@ -40,9 +39,8 @@
     border: 1px solid rgba(255, 255, 255, 0);
 
   }
-
-  @media ((max-width: calc(var(--diff) + 1429px))), ((max-width: calc(var(--diff) + 1130px)) and (min-width: calc(var(--diff) + 1045px))) {
-
+  //1025-1249
+  &_reduced {
     &:nth-child(n) {
       background-color: transparent;
       border: 1px solid rgba(255, 255, 255, .06);
@@ -59,24 +57,9 @@
     }
   }
 
-  @media ((max-width: calc(var(--diff) + 1204px)) and (min-width: calc(var(--diff) + 1131px))), (max-width: calc(var(--diff) + 1044px)) and (min-width: calc(var(--diff) + 705px)){
-    &:nth-child(n) {
-      background-color: transparent;
-      border: 1px solid rgba(255, 255, 255, .06);
-    }
-
-    &:nth-child(1),
-    &:nth-child(3),
-    &:nth-child(5),
-    &:nth-child(7),
-    &:nth-child(n + 9) {
-      background-color: rgba(255, 255, 255, .06);
-      border: 1px solid rgba(255, 255, 255, 0);
-    }
-
-  }
-
-  @media (max-width: calc(var(--diff) + 704px)) {
+  // 488-728
+  &_reducedMin {
+    
     &:nth-child(n) {
       background-color: transparent;
       border: 1px solid rgba(255, 255, 255, .06);
@@ -89,23 +72,8 @@
     &:nth-child(9) {
       background-color: rgba(255, 255, 255, .06);
       border: 1px solid rgba(255, 255, 255, 0);
+  
     }
-  }
-
-  @media (max-width: calc(var(--diff) + 471px)) {
-    &:nth-child(n) {
-      background-color: transparent;
-      border: 1px solid rgba(255, 255, 255, .06);
-    }
-
-    &:nth-child(2n + 1) {
-      background-color: rgba(255, 255, 255, .06);
-      border: 1px solid rgba(255, 255, 255, 0);
-    }
-  }
-
-  @media (max-width: calc(var(--diff) + 790px)) {
-    flex-basis: 192px;
   }
 }
 
@@ -121,13 +89,30 @@
 
 .feedbacksWrap {
   @extend %centered;
-  padding-top: 10rem;
+  justify-content: center;
+  padding: 10rem 10rem 5rem;
   background-color: $clr-background-mild;
+  background-image: url('../../../app/assets/img/svg/quote-bg.svg');
+  background-position: right top 80px;
+  background-repeat: no-repeat;
+  background-size: 500px;
+
   
-  @media (min-width: $breakpoint-lg) {
-    background-image: url('../../../app/assets/img/svg/quote-bg.svg');
-    background-position: right top 80px;
-    background-repeat: no-repeat;
-    background-size: 500px;
+  @media (max-width: 1400px) {
+    background-image: none;
+    padding: 8rem 8rem 3rem;
+  }
+  
+  @media (max-width: 1200px) {
+    background-image: none;
+    padding: 5rem 5rem 3rem;
+  }
+
+  @media (max-width: 1000px) {
+    padding: 3rem 3rem 2rem;
+  }
+
+  @media (max-width: 600px) {
+    padding: 1.5rem;
   }
 }
