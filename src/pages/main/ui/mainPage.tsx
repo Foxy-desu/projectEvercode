@@ -1,4 +1,4 @@
-import { SetStateAction, useEffect, useMemo, useRef } from 'react';
+import { SetStateAction, useMemo, useRef } from 'react';
 import { TRef } from '../../../shared/section/section';
 import { TAppList, TAppListItem, appList} from '../../../app/appData/appList';
 import { IFeedbackCard } from '../../../app/appData/feedbackList';
@@ -57,7 +57,6 @@ const MainPage =({
       />
       <div className={cl.contentWrap} ref={scrollTarget}>
         <Section
-          ref={scrollTarget}
           sectionTitle='<span>Разрабатываем микросервисы,</span> мобильные и&nbsp;веб-приложения для бизнеса и&nbsp;стартапов'>
           <AppsList
             appList={appList}

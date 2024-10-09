@@ -8,13 +8,13 @@ interface ISection extends HTMLAttributes<HTMLDivElement> {
 };
 export type TRef = HTMLHeadingElement;
 
-const Section = forwardRef<TRef, ISection>(({children, sectionTitle, className,...rest},ref)=> {
+const Section = ({children, sectionTitle, className,...rest}:ISection)=> {
   return (
     <section className={className ? className : cl.section} {...rest}>
       {sectionTitle && <h2 className={cl.title}>{parseHTML(sectionTitle)}</h2>}
       {children}
     </section>
   )
-});
+};
 
 export default Section;

@@ -3,12 +3,12 @@ import { Navigation, Pagination, A11y } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import RoundBtn from "../roundBtn/roundBtn";
-import SliderCard, { ISliderCardProps } from "../sliderCard/mySlideCard/sliderCard.tsx";
+import SliderCard, { ISliderCard } from "../sliderCard/mySlideCard/sliderCard.tsx";
 import cl from './slider.module.scss'; 
 import { useRef } from "react";
 
 interface ISlider {
-  items: Array<ISliderCardProps>
+  items: Array<ISliderCard>
 }
 
 const Slider = ({items}:ISlider)=>{

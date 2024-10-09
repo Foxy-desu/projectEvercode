@@ -1,9 +1,9 @@
 import cl from './navigationMenu.module.scss';
-import MenuLink, { IMenuLinkProps } from "../link/menuLink";
+import MenuLink, { IMenuLink } from "../link/menuLink";
 
 export interface INavProps {
   type: "footer" | "header";
-  links: Array<{to: string, text: string, type: IMenuLinkProps['type']; inner?: Array<{to: string, text: string}>}>;
+  links: Array<{to: string, text: string, type: IMenuLink['type']; inner?: Array<{to: string, text: string}>}>;
 }
 
 const NavigationMenu =({type,links}:INavProps)=>{
