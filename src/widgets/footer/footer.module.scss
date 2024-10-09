@@ -7,6 +7,11 @@ $clr-text: #a4acc6;
   @extend %centered;
   background-color: $clr-primary;
   padding: 1.562rem;
+
+  @media (max-width: 600px) {
+    padding: 1.5rem
+  }
+
 }
 
 .content {
@@ -17,7 +22,14 @@ $clr-text: #a4acc6;
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 2rem;
+  
+  @media (max-width: 1000px) {
+    padding: 0 1.5rem;
+  }
 
+  @media (max-width: 600px) {
+    padding: 0
+  }
 }
 
 .footer * {
@@ -58,7 +70,7 @@ $clr-text: #a4acc6;
     display: none;
   }
 
-   @media (max-width: ($breakpoint-mid)) {
+   @media (max-width: 946px) {
     display: block;
     order: 3;
     width: 100%;
@@ -66,8 +78,9 @@ $clr-text: #a4acc6;
 }
 
 .companyInfo {
-   @media (max-width: ($breakpoint-mid)) {
+   @media (max-width: 946px) {
     display: flex;
+    flex-wrap: wrap;
   }
 }
 
@@ -78,7 +91,7 @@ $clr-text: #a4acc6;
    margin-bottom: 0;
   }
 
-  @media (max-width: ($breakpoint-mid)) {
+  @media (max-width: 946px) {
     &:not(:first-child) {
       margin-right: 2rem;
     }
@@ -93,20 +106,20 @@ $clr-text: #a4acc6;
    margin-top: 2rem;
   }
 
-  @media (max-width: ($breakpoint-mid)) {
+  @media (max-width: 946px) {
     display: none;
   }
 }
 
 .navWrap,
 .contactsWrap {
-  @media (max-width: ($breakpoint-mid)) {
+  @media (max-width: 946px) {
     display: none;
   }
 }
 
 .socialsWrap {
-  @media (max-width: ($breakpoint-mid)) {
+  @media (max-width: 946px) {
     margin: 0 auto;
 
     & > .title {
@@ -144,7 +157,7 @@ $clr-text: #a4acc6;
 
 .accordionWrap {
   display: none;
-  @media (max-width: ($breakpoint-mid)) {
+  @media (max-width: 946px) {
     width: 100%;
     display: block;
   }
@@ -176,9 +189,10 @@ $clr-text: #a4acc6;
 
 .accordionContent {
   display: none;
+  overflow: hidden;
+  width: 100%;
 
   &Open{
     display: block;
-    width: 100%;
   }
 }
