@@ -1,15 +1,15 @@
-import { IHeroImages } from '../../../../app/appData/heroSectionImages';
+import { useMemo } from 'react';
+import { IHeroImgs, IHeroImgsSrcSet, IHeroImgsSrcs } from '../../../../app/appData/heroSectionImages';
 import SlideNextBtn from '../../../../shared/slideNextBtn/slideNextBtn';
 import { parseHTML } from '../../../../shared/utils/helpers';
 import cl from './heroSection.module.scss';
 
-
-export interface IHeroSectionProps {
+export interface IHeroSection {
   sectionTitle: string;
-  sectionImages: IHeroImages;
+  sectionImages: IHeroImgs;
   nextBtnHandler: ()=>void
 }
-const HeroSection =({sectionTitle, sectionImages, nextBtnHandler}:IHeroSectionProps)=> {
+const HeroSection =({sectionTitle, sectionImages, nextBtnHandler}:IHeroSection)=> {
   return (
     <section className={cl.heroSection}>
       <div className={cl.content}>
@@ -20,25 +20,51 @@ const HeroSection =({sectionTitle, sectionImages, nextBtnHandler}:IHeroSectionPr
           <SlideNextBtn onClick={nextBtnHandler}/>
         </div>
         <div className={cl.imageWrap}>
-          <picture>
-            {sectionImages.sources && sectionImages.sources.map(source => {
-              return <source type={source.type} srcSet={source.srcset.map(elem=>{
-                return `${elem.url} ${elem.width}w`;
-              }).join(', ')} sizes={sectionImages.default.sizes.join(', ')}/>
-            })}
-            <img
-              src={sectionImages.default.src}
-              srcSet={sectionImages.default.srcSet.map(img=>{
-                return `${img.url} ${img.width}w`;
-              }).join(', ')}
-              sizes={sectionImages.default.sizes.join(', ')}
-              alt={sectionImages.default.alt}
-              fetchPriority="high"
-              />
-          </picture>
+          <HeroImg sectionImages={sectionImages}/>
         </div>
       </div>
     </section>
+  )
+};
+
+const HeroImg =({sectionImages}:{sectionImages:IHeroImgs})=>{
+  function renderSrcSet(srcSet:IHeroImgsSrcSet[]){
+    //join urls and widths into a single string, each src is separated with a coma
+    return srcSet.map(elem=>`${elem.url} ${elem.width}w`).join(', ')
+  };
+  function renderSizes(sizes: string[]){
+    return sizes.join(', ')
+  };
+  function renderSources(sources?:IHeroImgsSrcs[]){
+    if (sources){
+      return sources.map(source => {
+      return (
+        <source
+        type={source.type}
+        srcSet={renderSrcSet(source.srcset)}
+        sizes={renderSizes(sectionImages.default.sizes)}
+        />
+      )
+    })} else return null
+  };
+  const heroImgData = useMemo(()=>{
+    return {
+      sources: renderSources(sectionImages.sources),
+      sizes: renderSizes(sectionImages.default.sizes),
+      srcSet: renderSrcSet(sectionImages.default.srcSet),
+    }
+  },[sectionImages])
+
+  return (
+    <picture>
+      {heroImgData.sources && heroImgData.sources}
+      <img
+        src={sectionImages.default.src}
+        srcSet={heroImgData.srcSet}
+        sizes={heroImgData.sizes}
+        alt={sectionImages.default.alt}
+      />
+    </picture>
   )
 };
 
