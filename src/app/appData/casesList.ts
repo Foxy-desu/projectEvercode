@@ -25,7 +25,7 @@ export interface ISliderCardImages {
   }[]
 };
 
-interface ISliderCardProps{
+interface ISliderCard{
   id: number;
   pageLink: string;
   cardTitle: string;
@@ -33,7 +33,7 @@ interface ISliderCardProps{
   extraInfo?: string;
   images: ISliderCardImages;
 }
-export const casesList: ISliderCardProps[] = [
+export const casesList: ISliderCard[] = [
   {
     id: 1,
     pageLink: 'cases/ondoc',

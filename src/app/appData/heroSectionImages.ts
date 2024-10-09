@@ -5,19 +5,25 @@ import heroSmAvif from '../assets/img/main/avif/Main (395).avif';
 import heroLgWebp from '../assets/img/main/webp/Main.webp';
 import heroSmWebp from '../assets/img/main/webp/Main (395).webp';
 
-export interface IHeroImages {
-  default: {
-    src: string;
-    srcSet: { url: string; width: number }[];
-    sizes: string[];
-    alt: string;
-  },
-  sources?: {
-    type: string,
-    srcset: { url: string; width: number }[];
-  }[]
+export interface IHeroImgsSrcSet {
+  url: string;
+  width: number;
 }
-export const heroImages:IHeroImages = {
+export interface IHeroImgsDef {
+  src: string;
+  srcSet: IHeroImgsSrcSet[];
+  sizes: string[];
+  alt: string;
+}
+export interface IHeroImgsSrcs {
+  type: string,
+  srcset: IHeroImgsSrcSet[];
+}
+export interface IHeroImgs {
+  default: IHeroImgsDef,
+  sources?: IHeroImgsSrcs[]
+}
+export const heroImages:IHeroImgs = {
   default: {
     src: heroLgPng,
     srcSet: [

@@ -1,4 +1,4 @@
-import { ISliderCardProps } from '../../shared/sliderCard/mySlideCard/sliderCard';
+import { ISliderCard} from '../../shared/sliderCard/mySlideCard/sliderCard';
 import medicPng from '../assets/img/products/png/Medic.png';
 import medicAvif from '../assets/img/products/avif/Medic.avif';
 import medicWebp from '../assets/img/products/webp/Medic.webp';
@@ -18,7 +18,7 @@ import evervaultPng from '../assets/img/products/png/Vault-cropped-optimized.png
 import evervaultAvif from '../assets/img/products/avif/Vault-cropped-optimized.avif';
 import evervaultWebp from '../assets/img/products/webp/Vault-cropped-optimized.webp';
 
-export const productsList: ISliderCardProps[] = [
+export const productsList: ISliderCard[] = [
   {
     id: 1,
     pageLink: 'https://эверкодлаб.рф/',
