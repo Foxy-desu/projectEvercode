@@ -1,4 +1,4 @@
-import { SetStateAction, useEffect, useMemo, useRef, useState } from 'react';
+import { SetStateAction, useMemo, useRef} from 'react';
 import { TRef } from '../../../shared/section/section';
 import { TAppList, TAppListItem, appList} from '../../../app/appData/appList';
 import { IFeedbackCard } from '../../../app/appData/feedbackList';
