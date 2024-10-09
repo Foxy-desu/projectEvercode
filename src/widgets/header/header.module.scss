@@ -1,24 +1,14 @@
 @import '../../app/assets/styles/variables';
+@import '../../app/assets/styles/placeholders';
 @import '../../app/assets/styles/mixins';
 
-.centered {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.limited {
-  //for header and content
-  @include limited()
-}
 
 .header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @extend %centered;
   width: 100%;
+
   &_expanded {
-    @media (max-width: 1130px) {
+    @media (max-width: $bp-header-nav) {
       position: fixed;
       background-color: $clr-background;
       z-index: 5;
@@ -30,32 +20,32 @@
 }
 
 .controlsWrap {
+  @extend %limited;
+
   display: flex;
   flex-shrink: 1;
   justify-content: space-between;
   align-items: center;
   gap: 50px;
-  height: 76px;
-  transition: .1s ease-out;
+  height: 4.75rem;
 }
 
 .link {
   flex-basis: 230px;
   height: auto;
-  
 }
 
 .navBarWrap {
   display: block;
   flex-shrink: 0;
-  @media (max-width: 1130px){
+  @media (max-width: $bp-header-nav){
     display: none;
   }
 }
 
 .btnWrap {
   display: none;
-  @media (max-width: 1130px){
+  @media (max-width: $bp-header-nav){
     display: block;
   }
   
@@ -64,7 +54,7 @@
 .mobileNav {
   display: none;
 
-  @media (max-width: 1130px){
+  @media (max-width: $bp-header-nav){
     &_opened {
       display: flex;
       flex-grow: 1;
