@@ -44,12 +44,14 @@ const Footer =({navMenuLinks}:{navMenuLinks:INavProps['links']})=> {
         </div>
         <div className={cl.accordionWrap}>
         <Acordion isOpen={accordeonOpen} titleOpen="Свернуть меню" titleClosed="Развернуть меню" clickHandler={toggleAccordion}>
-          <div className={cl.wrap}>
-          <NavigationMenu
-            type={'footer'}
-            links={navMenuLinks}
-          />
-          </div>
+          <>
+            <div className={cl.wrap}>
+              <NavigationMenu
+                type={'footer'}
+                links={navMenuLinks}
+            />
+            </div>
+          </>
         </Acordion>
       </div>
       </div>
