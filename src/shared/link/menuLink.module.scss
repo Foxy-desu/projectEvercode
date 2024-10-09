@@ -111,6 +111,8 @@
 
 .link_simplified{
   font-size: 16px;
+  width: 100%;
+  display: block;
   &.iconLink::after {
     background: $clr-text-lt;
     -webkit-mask-image: url('../../app/assets/img/svg/icon-out-head.svg');
@@ -119,3 +121,4 @@
   }
   
 }
+

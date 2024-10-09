@@ -1,4 +1,10 @@
 .icon {
   width: 100%;
   height: 100%;
+
+}
+* {
+  &:focus-visible {
+    outline: 2px dotted #59c030!important;
+  }
 }

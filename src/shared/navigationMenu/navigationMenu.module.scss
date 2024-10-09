@@ -16,6 +16,17 @@
   padding-left: 0;
 }
 
+.footerList .navItem {
+  margin: 0;
+
+  @media (hover:hover){
+    &:hover {
+      background-color: #ffffff0c;
+    }
+  }
+
+}
+
 .navItem {
   box-sizing: content-box;
   display: flex;
