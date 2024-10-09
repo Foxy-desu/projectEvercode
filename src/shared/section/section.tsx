@@ -11,7 +11,7 @@ export type TRef = HTMLHeadingElement;
 const Section = forwardRef<TRef, ISection>(({children, sectionTitle, className,...rest},ref)=> {
   return (
     <section className={className ? className : cl.section} {...rest}>
-      {sectionTitle && <h2 className={cl.title} ref={ref}>{parseHTML(sectionTitle)}</h2>}
+      {sectionTitle && <h2 className={cl.title}>{parseHTML(sectionTitle)}</h2>}
       {children}
     </section>
   )
