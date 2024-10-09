@@ -1,7 +1,6 @@
 @import "../../app/assets/styles/placeholders";
 @import "../../app/assets/styles/variables";
 
-// $breakpoint-mid: 946px;
 $clr-text: #a4acc6;
 .footer {
   @extend %centered;
@@ -70,11 +69,7 @@ $clr-text: #a4acc6;
     display: none;
   }
 
-  //  @media (max-width: 946px) {
-  //   display: block;
-  //   order: 3;
-  //   width: 100%;
-  // }
+  
   @media (max-width: 860px) {
     display: block;
     order: 3;
@@ -83,10 +78,7 @@ $clr-text: #a4acc6;
 }
 
 .companyInfo {
-  //  @media (max-width: 946px) {
-  //   display: flex;
-  //   flex-wrap: wrap;
-  // }
+ 
   @media (max-width: 860px) {
     display: flex;
     flex-wrap: wrap;
@@ -100,12 +92,6 @@ $clr-text: #a4acc6;
   @media (max-width: (1199px)) {
    margin-bottom: 0;
   }
-
-  // @media (max-width: 946px) {
-  //   &:not(:first-child) {
-  //     margin-right: 2rem;
-  //   }
-  // }
 
   @media (max-width: 860px) {
     &:not(:first-child) {
@@ -130,10 +116,6 @@ $clr-text: #a4acc6;
    margin-top: 2rem;
   }
 
-  // @media (max-width: 946px) {
-  //   display: none;
-  // }
-
   @media (max-width: 860px) {
     display: none;
   }
@@ -141,23 +123,14 @@ $clr-text: #a4acc6;
 
 .navWrap,
 .contactsWrap {
-  // @media (max-width: 946px) {
-  //   display: none;
-  // }
+  
   @media (max-width: 860px) {
     display: none;
   }
 }
 
 .socialsWrap {
-  // @media (max-width: 946px) {
-  //   margin: 0 auto;
-
-  //   & > .title {
-  //    display: none;
-  //   }
-  // }
-
+  
   @media (max-width: 860px) {
    
       margin: 0 auto;
@@ -198,10 +171,6 @@ $clr-text: #a4acc6;
 
 .accordionWrap {
   display: none;
-  // @media (max-width: 946px) {
-  //   width: 100%;
-  //   display: block;
-  // }
 
   @media (max-width: 860px) {
     width: 100%;
@@ -212,7 +181,6 @@ $clr-text: #a4acc6;
 .wrap {
   width: 100%;  
 }
-// accordion style
 
 .accordion {
   display: flex;
