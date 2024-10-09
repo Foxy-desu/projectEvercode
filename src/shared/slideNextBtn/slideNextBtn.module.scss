@@ -1,5 +1,5 @@
 @import '../../app/assets/styles/variables';
-@import '../../app/assets/styles/mixins';
+@import '../../app/assets/styles/placeholders';
 
 .btn {
   background: none;
@@ -22,10 +22,9 @@
 }
 
 .text {
+  @extend %inter-600;
   color: $clr-accent;
-  font-family: interregular, arial, "sans-serif";
   text-transform: uppercase;
-  font-size: $smallFontSize;
-  font-weight: 600;
+  font-size: 0.875rem;
   line-height: 1.5rem;
 }

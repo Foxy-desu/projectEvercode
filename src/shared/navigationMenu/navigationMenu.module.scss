@@ -1,6 +1,7 @@
+@import '../../app/assets/styles/placeholders';
+
 .navList {
-  padding: 0;
-  margin: 0;
+  @extend %noPadMarg;
 }
 
 .navBar {

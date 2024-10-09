@@ -1,6 +1,7 @@
 @import "./fonts";
 @import "uikit/dist/css/uikit.min.css";
 @import "./reset.scss";
+@import './variables';
 
 :root {
   color-scheme: light dark;
@@ -10,7 +11,7 @@
   display: flex;
   flex-direction: column;
   min-height: 100dvh;
-  background: rgb(239, 238, 235);
+  background: $clr-background;
 }
 
 .visually-hidden {
