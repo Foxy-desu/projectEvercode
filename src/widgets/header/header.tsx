@@ -1,37 +1,37 @@
-import { useEffect, useState } from "react";
 import BurgerBtn from "../../shared/burgerBtn/burgerBtn.tsx";
 import MainLogo from "../../shared/logo/logo.tsx";
 import NavigationMenu, { INavProps } from "../../shared/navigationMenu/navigationMenu.tsx";
-import cl from './header.module.scss';
 import { NavLink} from "react-router-dom";
-import { blockScroll } from "../../shared/utils/helpers/index.ts";
+import cl from './header.module.scss';
 
-const Header =({navMenuLinks}:{navMenuLinks:INavProps['links']})=>{
-  const [isBurgerOpen, setIsBurgerOpen] = useState(false);
-  function toggleBurger(){
-    setIsBurgerOpen(!isBurgerOpen);
-  };
-  function closeBurger(){
-    setIsBurgerOpen(false);
-  };
+interface IHeader {
+  navMenuLinks: INavProps['links'];
+  isBurgerOpen: boolean;
+  closeBurger: ()=>void;
+  toggleBurger: ()=>void;
+}
+const Header =({
+  navMenuLinks,
+  isBurgerOpen,
+  closeBurger,
+  toggleBurger}:IHeader)=>{
 
-  const headerStyle = `${cl.header} ${cl.centered} ${isBurgerOpen? cl.header_expanded:''}`
-  const logoLinkStyle = (isActive : boolean) => isActive ? `${cl.link} ${cl.active}` : `${cl.link}`;
+  const headerStyle = `${cl.header} ${isBurgerOpen? cl.header_expanded:''}`;
   const mobNavStyle = `${cl.mobileNav} ${isBurgerOpen? cl.mobileNav_opened : ''}`;
+  function renderNavLinks(navLinks: INavProps['links']){
+    return (
+      navLinks.map((link)=>(
+        <li key={link.text}>
+          <NavLink className={cl.mobileLink} to={link.to} onClick={closeBurger}>{link.text}</NavLink>
+        </li>
+      ))
+    )
+  }
 
-  useEffect(()=>{
-    blockScroll(isBurgerOpen);
-  }, [isBurgerOpen])
   return (
     <header className={headerStyle}>
-      <div className={`${cl.controlsWrap} ${cl.limited}`}>
-        <NavLink
-          className={({isActive})=> isBurgerOpen? logoLinkStyle(false):logoLinkStyle(isActive)}
-          to={'/'}
-          onClick={closeBurger}
-        >
-          <MainLogo scheme={'dark'} alt={"Логотип компании Evercode lab"}/>
-        </NavLink>
+      <div className={cl.controlsWrap}>
+        <HeaderLogo isBurgerOpen={isBurgerOpen} handleClick={closeBurger}/>
         <div className={cl.navBarWrap}>
           <NavigationMenu type={'header'} links={navMenuLinks}/>
         </div>
@@ -41,17 +41,28 @@ const Header =({navMenuLinks}:{navMenuLinks:INavProps['links']})=>{
       </div>
       <nav className={mobNavStyle}>
         <ul className={cl.navList}>
-          {
-            navMenuLinks.map((link)=>(
-              <li key={link.text}>
-                <NavLink className={cl.mobileLink} to={link.to} onClick={closeBurger}>{link.text}</NavLink>
-              </li>
-            ))
-          }
+          {renderNavLinks(navMenuLinks)}
         </ul>
       </nav>
     </header>
   )
 };
+
+interface IHeaderLogo {
+  isBurgerOpen: boolean;
+  handleClick: ()=>void;
+}
+const HeaderLogo =({isBurgerOpen, handleClick}:IHeaderLogo)=>{
+  const logoLinkStyle = (isActive : boolean) => isActive ? `${cl.link} ${cl.active}` : `${cl.link}`;
+
+  return (
+    <NavLink
+      className={({isActive})=> isBurgerOpen? logoLinkStyle(false):logoLinkStyle(isActive)}
+      to={'/'}
+      onClick={handleClick}>
+      <MainLogo scheme={'dark'} alt={"Логотип компании Evercode lab"}/>
+    </NavLink>
+  )
+}
 
 export default Header;
