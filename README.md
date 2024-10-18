@@ -1,50 +1,25 @@
-# React + TypeScript + Vite
+# Проект изменений для [Evercode Lab](https://evercodelab.com/ru)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Использованные технологии:
 
-Currently, two official plugins are available:
+- Typescript - благодаря типизации, возможности описания интерфейсов, позволяет сократить время на написание и отладку кода.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React - удобная декларативная библиотека для создания пользовательского интерфейса приложения с возможностью управления состоянием компонентов.
 
-## Expanding the ESLint configuration
+- SASS модули - для создания стилей компонентов, без опасений возникновения конфликтов в названиях классов (удобный синтаксис, вложенность, возможность создания переиспользуемых стилей)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Vite - быстрый удобный сборщик с поддержкой HMR (hot module replacement), позволяющий с легкостью менять файловую структуру проекта (так как входной точкой является подключенный в html скрипт)
 
-- Configure the top-level `parserOptions` property like this:
+- Swiper и UIKit библиотеки для быстрого создания слайдеров и элементов меню с выпадающим списком
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
-```
+- React-Router-DOM  для реализации навигации по сайту
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- Autoprefixer, Lodash, ESLint, Prettier, HTML-React-Parser
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react';
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-});
-```
+Ссылка на [деплой](https://foxy-desu.github.io/projectEvercode/)
+
+![image](https://github.com/user-attachments/assets/321a377b-3a06-40e9-b9a5-90b01ea0dce5)
+
+
+
